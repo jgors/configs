@@ -492,7 +492,7 @@ autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % 
 
 " Send visual mode highlighted code in buffer split.
 " (execute only highlighted code)
-let g:ConqueTerm_SendVisKey = '<leader>e'
+"let g:ConqueTerm_SendVisKey = '<leader>e'
 
 " Sends "%cpaste" to ipython split -- <leader> cp
 "nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
@@ -516,10 +516,11 @@ map <leader>sh :call conque_term#open('zsh', ['below split', 'resize 15'], 0)<cr
 map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
 
-"map <Leader>e :call MyConqTermIpythonExecutor()<CR> 
-"function! MyConqTermIpythonExecutor()
-    ":call conque_term#get_instance().writeln('%cpaste')<CR>
-"endfunction 
+map <Leader>e :call MyConqTermIpythonExecutor()<CR> 
+function! MyConqTermIpythonExecutor()
+    :call conque_term#get_instance().writeln('%cpaste')<CR>
+    let g:ConqueTerm_SendVisKey = '<leader>e'
+endfunction 
 
 
 " _______VIMUX_______ 
