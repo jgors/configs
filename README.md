@@ -18,20 +18,31 @@ vim +BundleInstall +qall
 git add .; git commit -m 'updated all plugins & config files'; git push
 ```
 
-#### To add or remove a vim plugin/bundle:
+#### To Add a vim plugin:
 ```
-# Add/Remove plugin listing in:
+## Add plugin listing to:
 vim ~/.configs/.vimrc.vundle_bundles
 
-# (If removing) then delete the plugin dir with:
+# Tell github of changes:
+git add .
+git commit -m 'added BUNDLE_NAME'
+git push
+```
+
+#### To Remove a vim plugin:
+```
+## Remove plugin listing from:
+vim ~/.configs/.vimrc.vundle_bundles
+
+# Delete the plugin dir with:
 # rm -rf ~/.vim/bundle/BUNDLE_NAME
 # or
 rm -rf ~/.configs/.vim/bundle/BUNDLE_NAME
 
-# Lastly, tell github of changes:
+# Tell github of changes:
 cd ~/.configs
-git add .
-git commit -m 'added/removed BUNDLE_NAME'
+git add -A
+git commit -m 'removed BUNDLE_NAME'
 git push
 
 ```
