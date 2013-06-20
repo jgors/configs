@@ -9,8 +9,10 @@ cd ~/.configs
 sh ./new_repo.sh
 ```
 
-##### << To upgrade all plugins/bundles to latest releases >>
+##### << To upgrade repo and all plugins/bundles to latest releases >>
 ```
+cd ~/.configs
+git pull
 vim +BundleInstall +qall
 ```
 
