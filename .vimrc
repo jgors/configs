@@ -3,16 +3,16 @@ set nomodeline                      " disable mode lines
 
 
 """""""""""""""""""""""""""""""""""
-" for vundle
+" Vundle
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" load up the bundles/plugins
 source ~/.configs/.vimrc.vundle_bundles
-
 """""""""""""""""""""""""""""""""""
 
-" PATHOGEN PLUG-IN -- life simplified
+" PATHOGEN PLUG-IN
 "call pathogen#infect()
 
 filetype plugin indent on           " allows use of plug-ins and such
@@ -488,18 +488,24 @@ autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % 
 
 " Send the entire contents of the file you are editing to an existing buffer.
 " (run whole file)
-let g:ConqueTerm_SendFileKey = '<leader>r'
+"let g:ConqueTerm_SendFileKey = '<leader>r'
 
 " Send visual mode highlighted code in buffer split.
 " (execute only highlighted code)
-let g:ConqueTerm_SendVisKey = '<leader>e'
+"let g:ConqueTerm_SendVisKey = '<leader>e'
 
 " Sends "%cpaste" to ipython split -- <leader> cp
-nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
+"nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
 
 function MyConqueStartup(term)
+
+    " Send visual mode highlighted code in buffer split.
+    " (execute only highlighted code)
+    let g:ConqueTerm_SendVisKey = '<leader>e'
+
     " Set buffer syntax using the name of the program currently running
     let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
+
     if has_key(syntax_associations, a:term.program_name)
         execute 'setlocal syntax=' . syntax_associations[a:term.program_name]
     else
@@ -514,6 +520,11 @@ map <leader>ip :call conque_term#open('ipython --pylab', ['below split', 'resize
 map <leader>sh :call conque_term#open('zsh', ['below split', 'resize 15'], 0)<cr>
 map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
+
+"map <Leader>e :call MyConqTermIpythonExecutor()<CR> 
+"function! MyConqTermIpythonExecutor()
+    ":call conque_term#get_instance().writeln('%cpaste')<CR>
+"endfunction 
 
 
 " _______VIMUX_______ 
