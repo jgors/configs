@@ -480,7 +480,7 @@ autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % 
 
 
 " _______CONQUETERM_______
-" Run terminal(/ ipython / R /etc) in a buffer split.
+" Run terminal(/ ipython / zsh /etc) in a buffer split.
 
 " Execute the current file in a new terminal buffer; will split the screen with a new
 "       buffer -- the file must be executable for this to work.
@@ -492,15 +492,14 @@ autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % 
 
 " Send visual mode highlighted code in buffer split.
 " (execute only highlighted code)
-"let g:ConqueTerm_SendVisKey = '<leader>e'
+let g:ConqueTerm_SendVisKey = '<leader>e'
 
 " Sends "%cpaste" to ipython split -- <leader> cp
-"nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
+nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
 
 function MyConqueStartup(term)
     " Set buffer syntax using the name of the program currently running
     let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
-
     if has_key(syntax_associations, a:term.program_name)
         execute 'setlocal syntax=' . syntax_associations[a:term.program_name]
     else
@@ -516,24 +515,30 @@ map <leader>sh :call conque_term#open('zsh', ['below split', 'resize 15'], 0)<cr
 map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
 
-map <Leader>e :call MyConqTermIpythonExecutor()<CR> 
-function! MyConqTermIpythonExecutor()
-    :call conque_term#get_instance().writeln('%cpaste')<CR>
-    let g:ConqueTerm_SendVisKey = '<leader>e'
-endfunction 
-
 
 " _______VIMUX_______ 
 
+map <Leader>vip :call MyVimuxEnvir("ipy")<CR> 
+map <Leader>vr :call MyVimuxEnvir("r")<CR> 
 
-map <Leader>vip :call VimuxIpy()<CR> 
-map <Leader>vr :call VimuxR()<CR> 
+function! MyVimuxEnvir(environ)
 
-" Run a visual highlighted chunk of code in the vimux split
-"vmap <silent> <Leader>e :python run_visual_code()<CR>
+    " Run a visual highlighted chunk of code in the vimux split
+    vmap <silent> <Leader>e :python run_visual_code()<CR>
 
-" Execute cell & leave cursor at point of execution 
-noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
+    " Execute cell & decide whether to leave cursor at point of execution 
+    noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
+
+    " Open a split with ipython [R, etc] by running the approp function
+    if a:environ == 'ipy'
+        call VimuxIpy()
+
+    elseif a:environ == 'r'
+        call VimuxR()
+    
+    endif
+endfunction 
+
 
 
 " this part below was before i created the ipy and r vimux plugins
