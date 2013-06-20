@@ -492,17 +492,12 @@ autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % 
 
 " Send visual mode highlighted code in buffer split.
 " (execute only highlighted code)
-"let g:ConqueTerm_SendVisKey = '<leader>e'
+let g:ConqueTerm_SendVisKey = '<leader>e'
 
 " Sends "%cpaste" to ipython split -- <leader> cp
 "nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
 
 function MyConqueStartup(term)
-
-    " Send visual mode highlighted code in buffer split.
-    " (execute only highlighted code)
-    let g:ConqueTerm_SendVisKey = '<leader>e'
-
     " Set buffer syntax using the name of the program currently running
     let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
 
