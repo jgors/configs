@@ -13,6 +13,11 @@ sh ./new_repo.sh
 ```
 cd ~/.configs
 git pull
+
+# remove any plugins that are not sourced in .configs/.vimrc.vundle_bundles
+vim +BundleClean +qall
+
+# update plugins that are sourced
 vim +BundleInstall +qall
 
 git add .; git commit -m 'updated all plugins & config files'; git push
