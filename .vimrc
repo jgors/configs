@@ -541,7 +541,7 @@ endfunction
 
 
 
-" this part below was before i created the ipy and r vimux plugins
+" This part below was before i created the ipy and r vimux plugins
 "map <Leader>vip :call MyVimux("ipy")<CR> 
 "map <Leader>vr :call MyVimux("r")<CR> 
 
