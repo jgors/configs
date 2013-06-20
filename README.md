@@ -16,11 +16,11 @@ vim +BundleInstall +qall
 
 ##### << To add or remove a vim plugin/bundle >> 
 ```
-* just add/remove the plugin listing in:
-~/.configs/.vimrc.vundle_bundles
+* Just add/remove the plugin listing with:
+vim ~/.configs/.vimrc.vundle_bundles
 
-* (when removing) then delete the plugin dir from either:
-~/.vim/bundle
+* (When removing) then delete the plugin dir with :
+rm -rf ~/.vim/bundle/[BUNDLE_NAME_TO_DELETE]
 (or)
-~/.configs/.vim/bundle
+rm -rf ~/.configs/.vim/bundle/[BUNDLE_NAME_TO_DELETE]
 ```
