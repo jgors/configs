@@ -20,7 +20,7 @@ vim +BundleInstall +qall
 vim ~/.configs/.vimrc.vundle_bundles
 
 * (When removing) then delete the plugin dir with :
-rm -rf ~/.vim/bundle/[BUNDLE_NAME_TO_DELETE]
+rm -rf ~/.vim/bundle/BUNDLE_TO_DELETE
 (or)
-rm -rf ~/.configs/.vim/bundle/[BUNDLE_NAME_TO_DELETE]
+rm -rf ~/.configs/.vim/bundle/BUNDLE_TO_DELETE
 ```
