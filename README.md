@@ -9,7 +9,7 @@ cd ~/.configs
 sh ./new_repo.sh
 ```
 
-#### To upgrade repo and all plugins to latest releases:
+#### To update repo and all plugins to latest releases:
 ```
 cd ~/.configs
 git pull
