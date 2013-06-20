@@ -23,9 +23,12 @@ git add .; git commit -m 'updated all plugins & config files'; git push
 ## Add plugin listing to:
 vim ~/.configs/.vimrc.vundle_bundles
 
+# Pull in the new plugin (and update the others):
+vim +BundleInstall +qall
+
 # Tell github of changes:
 git add .
-git commit -m 'added BUNDLE_NAME'
+git commit -m 'added BUNDLE_NAME and updated others'
 git push
 ```
 
