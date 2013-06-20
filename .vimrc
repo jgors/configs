@@ -497,17 +497,17 @@ let g:ConqueTerm_SendVisKey = '<leader>e'
 " Sends "%cpaste" to ipython split -- <leader> cp
 nnoremap <leader>cp :call conque_term#get_instance().writeln('%cpaste')<CR>
 
-function MyConqueStartup(term)
-    " Set buffer syntax using the name of the program currently running
-    let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
-    if has_key(syntax_associations, a:term.program_name)
-        execute 'setlocal syntax=' . syntax_associations[a:term.program_name]
-    else
-        execute 'setlocal syntax=' . a:term.program_name
-    endif
-endfunction
-" After a call to start a conqueterm is sent, then do this function is executed
-call conque_term#register_function('after_startup', 'MyConqueStartup')
+"function MyConqueStartup(term)
+    "" Set buffer syntax using the name of the program currently running
+    "let syntax_associations = { 'ipython': 'python', 'irb': 'ruby' }
+    "if has_key(syntax_associations, a:term.program_name)
+        "execute 'setlocal syntax=' . syntax_associations[a:term.program_name]
+    "else
+        "execute 'setlocal syntax=' . a:term.program_name
+    "endif
+"endfunction
+"" After a call to start a conqueterm is sent, then do this function is executed
+"call conque_term#register_function('after_startup', 'MyConqueStartup')
 
 " environment specific buffer set-ups
 map <leader>ip :call conque_term#open('ipython --pylab', ['below split', 'resize 15'], 0)<cr>
