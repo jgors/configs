@@ -11,7 +11,7 @@ sh ./new_repo.sh
 ```
 
 ```
-#    << To upgrade all plugins/pkgs to latest releases >>
+#    << To upgrade all plugins/bundles to latest releases >>
 
 cd ~/.configs
 vim +BundleInstall +qall
