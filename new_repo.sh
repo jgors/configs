@@ -5,21 +5,16 @@ git clone https://github.com/gmarik/vundle.git ~/.configs/.vim/bundle/vundle
 
 cd ~/.configs
 
-if [[ ( ! -f ~/.vimrc ) ]]; then
-    echo "Making link for ~/.vimrc file..."
-    ln -s ~/.configs/.vimrc ~/.vimrc
-fi
+echo "Making link for ~/.vimrc file..."
+rm ~/.vimrc
+ln -s ~/.configs/.vimrc ~/.vimrc
 
-if [[ ( ! -d ~/.vim ) ]]; then
-    echo "Making link for ~/.vim dir..."
-    ln -s ~/.configs/.vim ~/.vim
-fi
+echo "Making link for ~/.vim dir..."
+rm -rf ~/.vim
+ln -s ~/.configs/.vim ~/.vim
 
-if [[ ( ! -f ~/.tmux.conf ) ]]; then
-    echo "Making link for .tmux.conf file..."
-    ln -s ~/.configs/.vimrc ~/.tmux.conf
-fi
-
+echo "Making link for .tmux.conf file..."
+ln -s ~/.configs/.tmux.conf ~/.tmux.conf
 
 echo "Updating all Vundle Bundles..."
 vim +BundleInstall +qall
