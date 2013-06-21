@@ -1,7 +1,7 @@
 ## For syncing configurations across computers
 
 #### To set up new repo (eg. on a new machine):
-###### (NOTE, if wanted, back config files up before running new_repo.sh -- it replaces some dirs/files) 
+###### (NOTE, if wanted, back up config files before running new_repo.sh -- it replaces current config files) 
 ```
 cd ~
 git clone http://github.com/jgors/configs.git ~/.configs
