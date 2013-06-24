@@ -33,7 +33,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'benmills/vimux.git'
 "Bundle 'Valloric/YouCompleteMe'
 "
-"Bundle 'jgors/vimux-ipy'
+Bundle 'jgors/vimux-ipy'
 Bundle 'jgors/vimux-r'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
@@ -46,7 +46,6 @@ Bundle 'scratch.vim'
 
 """ git repos on your local machine (ie. when working on your own plugin)
 Bundle 'file://~/.vim/bundle/color_choices' 
-Bundle 'file:///home/jgors/Documents/codez/git_repos/github/vimux-ipy' 
 
 
 " Brief help
