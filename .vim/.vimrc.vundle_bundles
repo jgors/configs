@@ -46,7 +46,7 @@ Bundle 'scratch.vim'
 
 """ git repos on your local machine (ie. when working on your own plugin)
 Bundle 'file://~/.vim/bundle/color_choices' 
-Bundle 'file://~/Documents/codez/git_repos/github/vimux-ipy' 
+Bundle 'file:///home/jgors/Documents/codez/git_repos/github/vimux-ipy' 
 
 
 " Brief help
