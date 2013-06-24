@@ -7,7 +7,7 @@ cd ~/.configs
 
 echo "\n--> Replacing ~/.vimrc file with link from ~/.configs..."
 rm ~/.vimrc
-ln -s -v ~/.configs/.vim/.vimrc ~/.vimrc
+ln -s -v ~/.configs/.vimrc ~/.vimrc
 
 echo "\n--> Replacing ~/.vim dir with link from ~/.configs..."
 rm -rf ~/.vim
