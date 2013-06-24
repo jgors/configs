@@ -668,7 +668,7 @@ let g:indent_guides_start_level = 2
 " If want syntax errors, not warnings:
 "let g:syntastic_quiet_warnings=1
 "
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
 
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
@@ -705,22 +705,25 @@ let g:syntastic_check_on_open = 1
 "let g:SuperTabLongestHighlight = 1
 
 
+
 " _____jedi completion_____ " this is the one i'm currently using w/ supertab
-" use <C-space> to pop this open (b/c popup on dot turned off), then tab to cycle through
+
 "let g:jedi#auto_initialization = 0
 "let g:jedi#popup_on_dot = 0
 "let g:jedi#show_function_definition = "0"
 
-" ________ycm________"
-let g:ycm_complete_in_comments = 1
-let g:ycm_seed_identifiers_with_syntax = 1
+
+
+" ________ycm________
+"let g:ycm_complete_in_comments = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
 
 """"" For preview window pop up:
 " auto-close preview window after you select a completion string
 "let g:ycm_autoclose_preview_window_after_completion = 1
 
 " close the preview window after leaving insert mode
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " if never want preview window to show up
 "set completeopt-=preview
