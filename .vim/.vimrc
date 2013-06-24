@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " load up the bundles/plugins
-source ~/.configs/.vimrc.vundle_bundles
+source ~/.configs/.vim/.vimrc.vundle_bundles
 """""""""""""""""""""""""""""""""""
 
 " PATHOGEN PLUG-IN
