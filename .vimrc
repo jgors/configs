@@ -511,6 +511,7 @@ call conque_term#register_function('after_startup', 'MyConqueStartup')
 
 " environment specific buffer set-ups
 map <leader>ip :call conque_term#open('ipython --pylab', ['below split', 'resize 15'], 0)<cr>
+map <leader>i3 :call conque_term#open('ipython3', ['below split', 'resize 15'], 0)<cr>
 map <leader>sh :call conque_term#open('zsh', ['below split', 'resize 15'], 0)<cr>
 map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
