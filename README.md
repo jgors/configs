@@ -14,7 +14,7 @@ sh ./new_repo.sh
 cd ~/.configs
 git pull
 
-# remove any plugins that are not sourced in .configs/.vim/.vimrc.vundle_bundles
+# remove any plugins that are not sourced in ~/.vim/.vimrc.vundle_bundles
 vim +BundleClean +qall
 
 # update plugins that are sourced
@@ -26,7 +26,7 @@ git add .; git commit -m 'updated all plugins & config files'; git push
 #### To Add a vim plugin:
 ```
 ## Add plugin listing to:
-vim ~/.configs/.vim/.vimrc.vundle_bundles
+vim ~/.vim/.vimrc.vundle_bundles
 
 # Pull in the new plugin (and update the others):
 vim +BundleInstall +qall
@@ -40,11 +40,10 @@ git push
 #### To Remove a vim plugin:
 ```
 ## Remove plugin listing from:
-vim ~/.configs/.vim/.vimrc.vundle_bundles
+vim ~/.vim/.vimrc.vundle_bundles
 
 # Delete the plugin dir with:
-#rm -rf ~/.vim/bundle/BUNDLE_NAME
-rm -rf ~/.configs/.vim/bundle/BUNDLE_NAME
+rm -rf ~/.vim/bundle/BUNDLE_NAME
 
 # Tell github of changes:
 cd ~/.configs
