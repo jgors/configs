@@ -192,12 +192,12 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 
 " HTML
 " Highlight code more nicely
-au BufReadPre *.html set filetype=htmlm4
+"au BufReadPre *.html set filetype=htmlm4
 
 " HTML
 " Insert '<>' (in insert mode)
 " <Control> y
-imap <silent> <C-y> <><ESC>i    
+"imap <silent> <C-y> <><ESC>i    
 
 
 " ---------------------------------------------------------------------------------------
