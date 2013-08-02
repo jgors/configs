@@ -528,7 +528,8 @@ function! MyVimuxEnvir(environ)
     vmap <silent> <Leader>e :python run_visual_code()<CR>
 
     " Execute cell & decide whether to leave cursor at point of execution 
-    noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
+    "noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
+    noremap <silent> <Leader>c :python run_cell(save_position=False, cell_delim='# <codecell>')<CR>
 
     " Open a split with ipython [R, etc] by running the approp function
     if a:environ == 'ipy'
