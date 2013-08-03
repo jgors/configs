@@ -140,11 +140,11 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " copy/paste
 
 set clipboard+=unnamed              " copy/paste between vim sessions play nicer - yanks go to clipboard instead
-" Yank to the * register (* is into the system clipboard)
-noremap y "*y
+"" Yank to the * register (* is into the system clipboard)
+"noremap y "*y
 "noremap y "+y 
-" Paste from the * register (paste from the system clipboard)
-noremap p "*p
+"" Paste from the * register (paste from the system clipboard)
+"noremap p "*p
 "noremap p "+p
 
 
@@ -533,7 +533,8 @@ function! MyVimuxEnvir(environ)
 
     " Open a split with ipython [R, etc] by running the approp function
     if a:environ == 'ipy'
-        call VimuxIpy()
+        "call VimuxIpy('ipython01x')
+        call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh")
 
     elseif a:environ == 'r'
         call VimuxR()
