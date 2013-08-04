@@ -404,7 +404,11 @@ set hidden                          " current buffer can be hidden (put to bg) w
 nnoremap <leader><leader> <c-^>
 
 " Keep track of buffers and their respective #s for quick buffer switching
-nnoremap <leader>b :buffers<CR>:buffer<Space>
+"nnoremap <leader>b :buffers<CR>:buffer<Space>
+"
+" same as above, but opens the selected buffer in split
+nnoremap <leader>b :buffers<CR>:sbuffer<Space>
+set switchbuf=useopen,usetab
 
 " To cycle through buffers
 "nnoremap <C-u> :bprevious<CR>
