@@ -167,11 +167,13 @@ set noequalalways                   " wins are NOT automatically made the same s
 
 " decrease win height <shift>-
 nmap _ <C-W>- 
+
 " increase win height <shift>=
 nmap + <C-W>+
 
 " decrease win width <shift>9
 nmap ( <c-w><
+
 " increase win width <shift>0
 nmap ) <C-W>>
 
