@@ -1,4 +1,6 @@
 " vim colorscheme
+" Created by Jason Gors
+" Created 2009
 "
 " like_jazz.vim 
 " ========================
@@ -14,6 +16,7 @@ endif
 let colors_name = "like_jazz"
 
 " Global
+" normal is the background color
 hi Normal               guifg=#000000       guibg=#ffffff
 "hi NonText              guifg=#438ec3       guibg=gray90
 " from chela_light:
