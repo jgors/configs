@@ -20,7 +20,7 @@ echo "--> Replacing ~/.tmux.conf file with link from ~/.configs..."
 rm ~/.tmux.conf 
 ln -s -v ~/.configs/.tmux.conf ~/.tmux.conf
 
-#echo
-#echo "--> Updating all Vundle Bundles..."
-#vim +BundleInstall +qall
+echo
+echo "--> Updating all Vundle Bundles..."
+vim +BundleInstall +qall
 
