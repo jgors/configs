@@ -101,6 +101,9 @@ set wildignore+=*.DS_Store                      " ...OSX garbage
 " Sudo writing
 cmap w!! w !sudo tee % > /dev/null
 
+" Write file (if changes has been made) and exit (a built-in cmd)
+" :x  
+
 " Have ';' do the same thing as ':' 
 nnoremap ; :
 " press ;; to get ;
@@ -134,7 +137,7 @@ autocmd BufReadPost *
 "nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 
 "Switch cwd to the dir of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+"map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " ---------------------------------------------------------------------------------------
 " copy/paste
@@ -441,9 +444,6 @@ function! CloseWindowOrKillBuffer()
 endfunction
 
 nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
-
-" <leader> w to write and quit
-nmap <leader>w :wq<CR>
 
 
 "#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"
