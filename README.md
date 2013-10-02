@@ -4,7 +4,7 @@
 ###### (NOTE, if wanted, back up config files before running new_repo.sh -- it replaces current config files) 
 ```
 cd ~
-git clone http://github.com/jgors/configs.git ~/.configs
+git clone https://github.com/jgors/configs.git ~/.configs
 cd ~/.configs
 sh ./new_repo.sh
 ```
