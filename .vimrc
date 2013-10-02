@@ -8,8 +8,13 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+<<<<<<< HEAD
 " load up the bundles/plugins
 source ~/.configs/.vim/.vimrc.vundle_bundles
+=======
+" load the bundles/plugins
+source ~/.configs/.vim/vundle_bundles.vim
+>>>>>>> 27c165b3b9f10352048fe4e81f9c2c5f9faf8280
 """""""""""""""""""""""""""""""""""
 
 " PATHOGEN PLUG-IN
@@ -101,6 +106,12 @@ set wildignore+=*.DS_Store                      " ...OSX garbage
 " Sudo writing
 cmap w!! w !sudo tee % > /dev/null
 
+<<<<<<< HEAD
+=======
+" Write file (if changes has been made) and exit (a built-in cmd)
+" :x  
+
+>>>>>>> 27c165b3b9f10352048fe4e81f9c2c5f9faf8280
 " Have ';' do the same thing as ':' 
 nnoremap ; :
 " press ;; to get ;
@@ -134,7 +145,11 @@ autocmd BufReadPost *
 "nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 
 "Switch cwd to the dir of the open buffer
+<<<<<<< HEAD
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+=======
+"map <leader>cd :cd %:p:h<cr>:pwd<cr>
+>>>>>>> 27c165b3b9f10352048fe4e81f9c2c5f9faf8280
 
 " ---------------------------------------------------------------------------------------
 " copy/paste
@@ -442,9 +457,12 @@ endfunction
 
 nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
 
+<<<<<<< HEAD
 " <leader> w to write and quit
 nmap <leader>w :wq<CR>
 
+=======
+>>>>>>> 27c165b3b9f10352048fe4e81f9c2c5f9faf8280
 
 "#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"
 "#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"#"
