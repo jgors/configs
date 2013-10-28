@@ -543,7 +543,8 @@ function! MyVimuxEnvir(environ)
 
     " Open a split with ipython [R, etc] by running the approp function
     if a:environ == 'ipy'
-        call VimuxIpy()
+        "call VimuxIpy()
+        call VimuxIpy("ipython --pylab")
         "call VimuxIpy("ipython --profile=ssh")
         "probably don't start ipython inside tmux like this:
         "call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh") 
