@@ -210,6 +210,9 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 set antialias
 colorscheme like_jazz "colorscheme i created
 "colorscheme wombat
+"colorscheme chela_light
+"colorscheme morning
+
 
 if has('gui_running')
     "set background=dark
