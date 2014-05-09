@@ -18,7 +18,7 @@ let colors_name = "like_jazz"
 " Global
 " normal is the background color
 "hi Normal               guifg=#000000       guibg=#ffffff
-hi Normal                guifg=Black         guibg=grey99
+hi Normal                guifg=Black         guibg=grey97
 
 "hi NonText              guifg=#438ec3       guibg=gray90
 " from chela_light:
@@ -63,7 +63,8 @@ hi Function             guifg=Magenta                       "gui=bold
 "hi Comment              guifg=#339900       guibg=#fafafa   gui=italic
 "
 "hi Comment              guifg=#339900       guibg=#fafafa
-hi Comment               guifg=#339900       guibg=grey99
+hi Comment               guifg=#339900       guibg=grey97
+
 
 " for ipython code in conque-term
 "hi PreProc              guifg=#ff0007                       "gui=bold
