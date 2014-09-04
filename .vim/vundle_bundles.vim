@@ -32,6 +32,7 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'benmills/vimux'
 "Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-obsession'
 
 Bundle 'jgors/vimux-ipy'
 Bundle 'jgors/vimux-r'
