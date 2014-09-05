@@ -234,6 +234,9 @@ if has('gui_running')
 else " Console Vim
     "set background=light
     
+    "In console mode, Vim is using the current font of the terminal. 
+    "So have to find out on the system, then modify it.
+    
     " 3 plugins to make gvim colors work in the vim--colorsupport, csapprox, & guicolorscheme.
     " I'm using colorsupport.vim 
     set t_Co=256                                        " so i can use colors in console
