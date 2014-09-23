@@ -17,6 +17,7 @@ source ~/.configs/.vim/vundle_bundles.vim
 
 filetype plugin indent on           " allows use of plug-ins and such
 syntax on
+syntax enable
 "set smartindent                    " instead of these 2, using the google code below 
 "set autoindent                  
 set shiftwidth=4                    " # of spaces to use for autoindent
@@ -208,15 +209,16 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 " ---------------------------------------------------------------------------------------
 " Mode Settings
 set antialias
+
 colorscheme like_jazz "colorscheme i created
 "colorscheme wombat
 "colorscheme chela_light
 "colorscheme morning
 
-
 if has('gui_running')
     "set background=dark
     
+    "colorscheme solarized
     "colorscheme phd "DARKER --> wombat; jellybeans; phd 
 
     "FONTS
@@ -234,8 +236,11 @@ if has('gui_running')
 else " Console Vim
     "set background=light
     
-    "In console mode, Vim is using the current font of the terminal. 
-    "So have to find out on the system, then modify it.
+    "colorscheme like_jazz "colorscheme i created
+    
+    "FONTS
+    "In console mode, Vim is uses the current font of the terminal; 
+    "so have to find out on the terminal profile & then modify it.
     
     " 3 plugins to make gvim colors work in the vim--colorsupport, csapprox, & guicolorscheme.
     " I'm using colorsupport.vim 
