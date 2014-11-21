@@ -17,7 +17,8 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'fs111/pydoc.vim'
 "Bundle 'klen/python-mode'
 Bundle 'kevinw/pyflakes-vim'
@@ -40,7 +41,7 @@ Bundle 'jgors/vimux-r'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 
-""" vim-scripts repos 
+""" vim-scripts repos
 Bundle 'scratch.vim'
 
 """ non-github git repos

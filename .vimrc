@@ -18,8 +18,8 @@ source ~/.configs/.vim/vundle_bundles.vim
 filetype plugin indent on           " allows use of plug-ins and such
 syntax on
 syntax enable
-"set smartindent                    " instead of these 2, using the google code below 
-"set autoindent                  
+"set smartindent                    " instead of these 2, using the google code below
+"set autoindent
 set shiftwidth=4                    " # of spaces to use for autoindent
 set tabstop=4                       " makes tabs 4 spaces instead of 8
 set expandtab                       " turns tab in insert mode into appropriate # of spaces
@@ -27,12 +27,12 @@ set smarttab                        " insert tabs on the beg of line according t
 set shiftround                      " use shiftwidth size for shifting code with '<' &/or '>'
 set softtabstop=4                   " when hitting <BS>, act like a tab is removed
 set backspace=eol,start,indent      " allow backspacing over everything
-set scrolloff=2                     " keep n # of lines off of the top/bottom edges when vertical scrolling 
+set scrolloff=2                     " keep n # of lines off of the top/bottom edges when vertical scrolling
 set sidescrolloff=10                " how close to get to the screen edge before it scrolls horizontally
 set sidescroll=1                    " along w/ sidescrolloff, makes scrolling horizontally smoother
 set nowrap                          " don't line wrap text if it stretches past the window edge
 "set showbreak=↪                    " put at the start of lines that have been wrapped
-"set textwidth=100                  " break lines when line length is too long 
+"set textwidth=100                  " break lines when line length is too long
 "set colorcolumn=90                 " show colored column when a line of code is too long
 "if exists("&colorcolumn")           " have color column warn after 90 characters only in insert mode
     "autocmd InsertEnter * set colorcolumn=91
@@ -53,7 +53,7 @@ set go+=b                           " add bottom scrollbar (gvim)
 set history=1000                    " remember more commands and search history
 set undolevels=1000                 " max number of changes that can be undone
 set viminfo='20,\"80                " read/write a .viminfo file & don't store more than 80 lines of registers
-set nobackup                        " forbid vim to write a backup... 
+set nobackup                        " forbid vim to write a backup...
 set noswapfile                      " ...or swap file
 "set backup                          " enable backups
 "set backupdir=~/.vim/tmp/backup/    " backup location
@@ -61,31 +61,31 @@ set noswapfile                      " ...or swap file
 "set undodir=~/.vim/tmp/undo/        " undo files
 "set undofile                        " create .un~ files; contain undo info, even after reopening file.
 set autochdir                       " automatically change wins cwd to the current file's dir (for gvim)
-set autowrite                       " write the contents, if the file has been modified 
-set autoread                        " if a file has been changed outside of Vim & has not been changed 
+set autowrite                       " write the contents, if the file has been modified
+set autoread                        " if a file has been changed outside of Vim & has not been changed
                                     " inside of Vim, automatically read it again.
- 
+
 
 " F9 creates a word processing(ish) mode
-" setlocal so it doesn't affect new buffers/tabs i open 
-func! DocumentEditingMode() 
-    setlocal formatoptions=1 
+" setlocal so it doesn't affect new buffers/tabs i open
+func! DocumentEditingMode()
+    setlocal formatoptions=1
     set complete+=s
-    setlocal spell spelllang=en_us 
+    setlocal spell spelllang=en_us
     :hi SpellBad ctermbg=LightMagenta
     :hi SpellCap ctermbg=LightBlue
     setlocal nonumber
     setlocal noruler
     setlocal smartindent
-    setlocal wrap 
+    setlocal wrap
     setlocal linebreak  " break lines on words, not in the middle of them
     " navigate misspelled words -- S goes to previous misspelled word, s goes to next one
     noremap S [s
     noremap s ]s
-    " zg == to add current misspelled word to dict 
+    " zg == to add current misspelled word to dict
     " z == gives a list of potential matches for a misspelled word
     noremap z z=
-endfu 
+endfu
 nmap <silent> <F9> :call DocumentEditingMode()<CR>
 
 " Tab completion settings for cmd window
@@ -103,14 +103,14 @@ set wildignore+=*.DS_Store                      " ...OSX garbage
 cmap w!! w !sudo tee % > /dev/null
 
 " Write file (if changes has been made) and exit (a built-in cmd)
-" :x  
+" :x
 
-" Have ';' do the same thing as ':' 
+" Have ';' do the same thing as ':'
 nnoremap ; :
 " press ;; to get ;
 noremap ;; ;
 
-" Remaps <leader> from '\' to ',' 
+" Remaps <leader> from '\' to ','
 let mapleader = ","
 
 " Leave insert mode w/o developing rsi
@@ -120,7 +120,7 @@ inoremap jj <Esc>
 noremap H ^
 noremap L g_
 
-" If wrapping enabled, this solves the problem that moving around will jump the cursor over the line. 
+" If wrapping enabled, this solves the problem that moving around will jump the cursor over the line.
 nnoremap j gj
 nnoremap k gk
 
@@ -146,7 +146,7 @@ autocmd BufReadPost *
 set clipboard+=unnamed              " copy/paste between vim sessions play nicer - yanks go to clipboard instead
 "" Yank to the * register (* is into the system clipboard)
 "noremap y "*y
-"noremap y "+y 
+"noremap y "+y
 "" Paste from the * register (paste from the system clipboard)
 "noremap p "*p
 "noremap p "+p
@@ -154,12 +154,12 @@ set clipboard+=unnamed              " copy/paste between vim sessions play nicer
 
 " Line #s & fold column toggle
 "
-" Paste Mode 
+" Paste Mode
 "
 "" (for easier copy/pasting from terminal)
 "nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
-"" Disable autoindent to paste indented text. 
+"" Disable autoindent to paste indented text.
 "set pastetoggle=<F3>
 
 " Preserve indentation while pasting text from the clipboard
@@ -170,7 +170,7 @@ set clipboard+=unnamed              " copy/paste between vim sessions play nicer
 set noequalalways                   " wins are NOT automatically made the same size after splitting or closing a win
 
 " decrease win height <shift>-
-nmap _ <C-W>- 
+nmap _ <C-W>-
 
 " increase win height <shift>=
 nmap + <C-W>+
@@ -184,7 +184,7 @@ nmap ) <C-W>>
 " ---------------------------------------------------------------------------------------
 "  File specific
 "
-" Python 
+" Python
 " Remove extra whitespace from the ends of lines when saving
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
@@ -203,7 +203,7 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 " HTML
 " Insert '<>' (in insert mode)
 " <Control> y
-"imap <silent> <C-y> <><ESC>i    
+"imap <silent> <C-y> <><ESC>i
 
 
 " ---------------------------------------------------------------------------------------
@@ -217,9 +217,9 @@ colorscheme like_jazz "colorscheme i created
 
 if has('gui_running')
     "set background=dark
-    
+
     "colorscheme solarized
-    "colorscheme phd "DARKER --> wombat; jellybeans; phd 
+    "colorscheme phd "DARKER --> wombat; jellybeans; phd
 
     "FONTS
     if has("gui_macvim")
@@ -227,7 +227,7 @@ if has('gui_running')
     else
         set guifont=Inconsolata\ 12
     endif
-    
+
     " Different cursors for different modes.
     set guicursor=n-c:block-Cursor-blinkon0
     set guicursor+=v:block-vCursor-blinkon0
@@ -235,15 +235,15 @@ if has('gui_running')
 
 else " Console Vim
     "set background=light
-    
+
     "colorscheme like_jazz "colorscheme i created
-    
+
     "FONTS
-    "In console mode, Vim is uses the current font of the terminal; 
+    "In console mode, Vim is uses the current font of the terminal;
     "so have to find out on the terminal profile & then modify it.
-    
+
     " 3 plugins to make gvim colors work in the vim--colorsupport, csapprox, & guicolorscheme.
-    " I'm using colorsupport.vim 
+    " I'm using colorsupport.vim
     set t_Co=256                                        " so i can use colors in console
 
     " After startup stuff is loaded, then change the color of errors in PyFlakes:
@@ -259,7 +259,7 @@ endif
 
 
 " ---------------------------------------------------------------------------------------
-" Status Line 
+" Status Line
 
 "augroup ft_statuslinecolor
     "au!
@@ -380,7 +380,7 @@ set guicursor+=a:blinkon0                       " never blink cursor in gvim
 set cursorline                                  " highlights the line currently on
 
 " Search for function def currently under cursor
-map <buffer> gd /def <c-r><c-w><cr> 
+map <buffer> gd /def <c-r><c-w><cr>
 
 " Use better regexes.
 "nnoremap / /\v
@@ -394,7 +394,7 @@ set hlsearch            " highlight search terms
 set ignorecase          " ignore case when searching
 set smartcase           " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set showfulltag         " show full tags when doing search completion
-set gdefault            " search/replace 'globally' (per line) 
+set gdefault            " search/replace 'globally' (per line)
 " because of this last setting, don't need to use g in string search and
 " replaces (b/c g means global normally, but with 'set gdefault' on, g reverses its meaning)
 
@@ -413,7 +413,7 @@ nnoremap <C-n> :tabnext<CR>
 " ---------------------------------------------------------------------------------------
 " Buffers (splitting, moving, etc)
 
-set hidden                          " current buffer can be hidden (put to bg) w/o being written 
+set hidden                          " current buffer can be hidden (put to bg) w/o being written
 
 " Switch between current buffer and previous one
 " <leader> <leader>
@@ -445,7 +445,7 @@ map <C-l> <C-w>l
 
 " Close & Kill buffer (if there are multiple buffers in the same window);
 " else, kill the window entirely if it's the last buffer in that window.
-" <leader> q 
+" <leader> q
 function! CloseWindowOrKillBuffer()
   if(bufwinnr('%')) > 1
     wincmd c
@@ -491,7 +491,7 @@ let g:tagbar_sort = 0
 " EXECUTE CODE
 
 " _______Entire File_______
-" <leader-r> 
+" <leader-r>
 autocmd FileType python nmap <buffer> <leader>r :w<cr>:!/usr/bin/env python % <cr>
 autocmd FileType ruby nmap <buffer> <leader>r :w<cr>:!/usr/bin/env ruby % <cr>
 autocmd FileType Rscript nmap <buffer> <leader>r :w<cr>:!/usr/bin/env Rscript % <cr>
@@ -538,17 +538,17 @@ map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
 
 
-" _______VIMUX_______ 
+" _______VIMUX_______
 
-map <Leader>vip :call MyVimuxEnvir("ipy")<CR> 
-map <Leader>vr :call MyVimuxEnvir("r")<CR> 
+map <Leader>vip :call MyVimuxEnvir("ipy")<CR>
+map <Leader>vr :call MyVimuxEnvir("r")<CR>
 
 function! MyVimuxEnvir(environ)
 
     " Run a visual highlighted chunk of code in the vimux split
     vmap <silent> <Leader>e :python run_visual_code()<CR>
 
-    " Execute cell & decide whether to leave cursor at point of execution 
+    " Execute cell & decide whether to leave cursor at point of execution
     "noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
     noremap <silent> <Leader>c :python run_cell(save_position=False, cell_delim='# <codecell>')<CR>
 
@@ -558,19 +558,19 @@ function! MyVimuxEnvir(environ)
         call VimuxIpy("ipython --pylab")
         "call VimuxIpy("ipython --profile=ssh")
         "probably don't start ipython inside tmux like this:
-        "call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh") 
+        "call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh")
 
     elseif a:environ == 'r'
         call VimuxR()
-    
+
     endif
-endfunction 
+endfunction
 
 
 
 " This part below was before i created the ipy and r vimux plugins
-"map <Leader>vip :call MyVimux("ipy")<CR> 
-"map <Leader>vr :call MyVimux("r")<CR> 
+"map <Leader>vip :call MyVimux("ipy")<CR>
+"map <Leader>vr :call MyVimux("r")<CR>
 
 "function! MyVimux(environ)
 
@@ -579,19 +579,19 @@ endfunction
 
     "" Prompt for a command to run
     ""map <Leader>vp :VimuxPromptCommand<CR>
-    
+
     "" Run last command executed by VimuxRunCommand
     ""map <Leader>vl :VimuxRunLastCommand<CR>
-    
+
     "" Inspect runner pane (jump down into the pane) in vim mode
     "map <Leader>vi :VimuxInspectRunner<CR>
-    
+
     "" Close all other tmux panes in current window
     "map <Leader>vx :VimuxClosePanes<CR>
-    
+
     "" Close vim tmux runner opened by VimuxRunCommand
     "map <Leader>vq :VimuxCloseRunner<CR>
-    
+
     "" Interrupt any command running in the runner pane
     "map <Leader>ve :VimuxInterruptRunner<CR>
 
@@ -607,14 +607,14 @@ endfunction
     "if a:environ == 'ipy'
 
         "" ___Vimux-ipy___
-        
+
         "" Run a visual highlighted chunk of code in the vimux split
         "vmap <silent> <Leader>e :python run_tmux_python_chunk()<CR>
 
         "" Execute cell & then move cursor down to execute next cell
         ""noremap <silent> <C-b> :python run_tmux_python_cell(save_position=False)<CR>
 
-        "" Execute cell & leave cursor at point of execution 
+        "" Execute cell & leave cursor at point of execution
         "noremap <silent> <Leader>c :python run_tmux_python_cell(save_position=True)<CR>
 
         ""exec VimuxRunCommand("clear; ipython --pylab")
@@ -628,7 +628,7 @@ endfunction
         "exec VimuxRunCommand("clear; R")
 
     "endif
-"endfunction 
+"endfunction
 
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
@@ -643,12 +643,12 @@ noremap <silent> <leader>nt :NERDTreeToggle<CR>
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 "
 " INDENTATION HIGHLIGHTING GUIDE
-" 
+"
 " <leader> ig
 "
 "let g:indent_guides_enable_on_vim_startup = 1
 
-" Sets indent highlighting to one column instead of 4 (only work for spaces, not tabs): 
+" Sets indent highlighting to one column instead of 4 (only work for spaces, not tabs):
 let g:indent_guides_guide_size = 1
 
 " Indent level to start showing guides from:
@@ -674,14 +674,14 @@ let g:indent_guides_start_level = 2
 
 
 " _______PyFlakes_______
-" 
+"
 " (turned on by default)
 " shows errors before run time
 
 
 " _______Syntastic_______ ----------------------------------------------uninstalled
 "
-" (ssh issues) 
+" (ssh issues)
 "
 " To use the |:sign| interface to mark syntax errors:
 "let g:syntastic_enable_signs=1
@@ -702,13 +702,13 @@ let g:indent_guides_start_level = 2
 "
 " VIEWING PYTHON DOCUMENTATION
 
-" pydoc.vim 
+" pydoc.vim
 " Python documentation view & search tool
 "
-" View documentation of the 'word' (see :help word) under the cursor by: 
+" View documentation of the 'word' (see :help word) under the cursor by:
 " <leader>pw    (same as K)
 "
-" Or the 'WORD' (see :help WORD) under the cursor by pressing 
+" Or the 'WORD' (see :help WORD) under the cursor by pressing
 " <leader>pW
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
@@ -779,13 +779,13 @@ let g:indent_guides_start_level = 2
 "  SCRATCH BUFFER
 " :SB or :ScratchToggle
 
-map <Leader>sb :call ScratchToggle()<CR> 
+map <Leader>sb :call ScratchToggle()<CR>
 
 "command! SB call ScratchToggle()
 function! ScratchToggle()
     exec "normal! :Sscratch\<cr>\<C-W>J:resize 13\<cr>"
     let w:is_scratch_window = 1
-endfunction 
+endfunction
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 " Gundo (undoing)
@@ -796,7 +796,7 @@ let g:gundo_right = 1
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 " Showmarks
 "
-" set a mark by pressing m followed by another letter/number that designates the mark. To jump to 
+" set a mark by pressing m followed by another letter/number that designates the mark. To jump to
 " a mark, enter ' followed by the mark's letter/number.
 "
 " <Leader>mt   - Toggles ShowMarks on and off.
