@@ -5,7 +5,6 @@ Bundle 'gmarik/vundle'
  
 """ repos on github
 Bundle 'vim-scripts/colorsupport.vim'
-Bundle 'carlobaldassi/ConqueTerm'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle "merlinrebrovic/focus.vim"
@@ -16,9 +15,11 @@ Bundle 'davidhalter/jedi-vim'
 "Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Lokaltog/powerline'
 "Bundle 'bling/vim-airline'
+"
 Bundle 'fs111/pydoc.vim'
 "Bundle 'klen/python-mode'
 Bundle 'kevinw/pyflakes-vim'
@@ -31,7 +32,14 @@ Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
+
+Bundle 'carlobaldassi/ConqueTerm'
 Bundle 'benmills/vimux'
+Bundle 'jpalardy/vim-slime'
+"Bundle 'julienr/vim-cellmode'
+
+Bundle 'christoomey/vim-tmux-navigator'
+
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-obsession'
 Bundle 'altercation/vim-colors-solarized'
@@ -39,7 +47,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jgors/vimux-ipy'
 Bundle 'jgors/vimux-r'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
 
 """ vim-scripts repos
 Bundle 'scratch.vim'

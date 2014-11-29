@@ -809,3 +809,11 @@ let g:gundo_right = 1
 " Startify
 
 
+"#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_python_ipython = 1
+xmap <leader>e <Plug>SlimeRegionSend
+"let g:slime_paste_file = "/tmp/.slime_paste"
+
