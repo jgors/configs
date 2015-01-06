@@ -32,6 +32,7 @@ Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
+"Bundle 'blueyed/vim-diminactive'
 
 Bundle 'carlobaldassi/ConqueTerm'
 Bundle 'benmills/vimux'
