@@ -40,6 +40,7 @@ Bundle 'jpalardy/vim-slime'
 "Bundle 'julienr/vim-cellmode'
 
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'FredKSchott/CoVim'
 
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-obsession'

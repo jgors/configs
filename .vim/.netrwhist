@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/jgors/Documents/codez/studies/famface_cfs/code/scripts/analyses/mvpa/for_new_breakthrough_glm_mvpa'
