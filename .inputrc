@@ -1,7 +1,16 @@
 set editing-mode vi
+
 $if mode=vi
-set keymap vi-command
-"gg": beginning-of-history
-"G": end-of-history
-set keymap vi-insert
-"jj": vi-movement-mode
+    set keymap vi-command
+    #"gg": beginning-of-history
+    #"G": end-of-history
+    "k": history-search-backward
+    "j": history-search-forward
+    "?": reverse-search-history
+    "/": forward-search-history
+    "H": beginning-of-line
+    "L": end-of-line
+
+    set keymap vi-insert
+    "jj": vi-movement-mode
+$endif
