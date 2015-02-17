@@ -21,5 +21,10 @@ rm ~/.tmux.conf
 ln -s -v ~/.configs/.tmux.conf ~/.tmux.conf
 
 echo
+echo "--> Replacing ~/.inputrc file with link from ~/.configs..."
+rm ~/.inputrc
+ln -s -v ~/.configs/.inputrc ~/.inputrc
+
+echo
 echo "--> Updating all Vundle Bundles..."
 vim +BundleInstall +qall
