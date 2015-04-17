@@ -141,6 +141,7 @@ autocmd BufReadPost *
 "Switch cwd to the dir of the open buffer
 "map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+
 " ---------------------------------------------------------------------------------------
 " copy/paste
 
