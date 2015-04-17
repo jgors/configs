@@ -12,6 +12,7 @@ call vundle#rc()
 source ~/.configs/.vim/vundle_bundles.vim
 """""""""""""""""""""""""""""""""""
 
+
 " PATHOGEN PLUG-IN
 "call pathogen#infect()
 
