@@ -192,12 +192,20 @@ nmap ) <C-W>>
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
 " Add header file for python files
-autocmd bufnewfile *.py so $HOME/.configs/.vim/py_header.txt
+"autocmd bufnewfile *.py so $HOME/.configs/.vim/py_header.txt
+autocmd bufnewfile *.py 0r $HOME/.configs/.vim/py_header_new.txt
+
 "autocmd bufnewfile *.py exe "1," . 10 . "g/Creation Date:.*/s//Creation Date: " .strftime("%m-%d-%Y")
 autocmd bufnewfile *.py exe "1," . 9 . "g/Creation Date:.*/s//Creation Date: " .strftime("%m-%d-%Y")
+
 autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 "autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Last Modified:.*/s/Last Modified:.*/Last Modified: " .strftime("%c")
 "autocmd bufwritepost,filewritepost *.py execute "normal `a"
+
+autocmd FileType python set sw=4
+autocmd FileType python set ts=4
+autocmd FileType python set sts=4
+
 
 " HTML
 " Highlight code more nicely
