@@ -1,6 +1,5 @@
-:insert
 #!/usr/bin/env python
-# vim: ts=4 et sw=4 sts=4 
+
 '''
 ----------------------------------------------------------------
 Author: Jason Gors <jasonDOTgorsATgmail>
@@ -8,4 +7,3 @@ Creation Date:
 Purpose:
 ----------------------------------------------------------------
 '''
-.

@@ -188,9 +188,6 @@ nmap ) <C-W>>
 "  File specific
 "
 " Python
-" Remove extra whitespace from the ends of lines when saving
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
-
 " Add header file for python files
 "autocmd bufnewfile *.py so $HOME/.configs/.vim/py_header.txt
 autocmd bufnewfile *.py 0r $HOME/.configs/.vim/py_header_new.txt
@@ -202,10 +199,9 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 "autocmd Bufwritepre,filewritepre *.py exe "1," . 10 . "g/Last Modified:.*/s/Last Modified:.*/Last Modified: " .strftime("%c")
 "autocmd bufwritepost,filewritepost *.py execute "normal `a"
 
-autocmd FileType python set sw=4
-autocmd FileType python set ts=4
-autocmd FileType python set sts=4
 
+" Remove extra whitespace from the ends of lines when saving
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
 " HTML
 " Highlight code more nicely
