@@ -24,8 +24,10 @@ echo
 echo "--> Replacing ~/.zsh dir with link from ~/.configs..."
 rm -rf ~/.zsh
 ln -s -v ~/.configs/.zsh ~/.zsh
+echo "############################################"
 echo "NOTE:  ADD THIS AT THE TOP OF ~/.zshrc file:"
 echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
+echo "############################################"
 
 echo
 echo "--> Replacing ~/.inputrc file with link from ~/.configs..."
