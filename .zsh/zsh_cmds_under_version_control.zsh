@@ -3,12 +3,17 @@ autoload -Uz promptinit
 promptinit
 #prompt walters
 
-setopt histignorealldups sharehistory
 
+
+# History
 # Keep this many lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=9000
 HISTFILE=~/.zsh_history
+setopt append_history # Allow multiple terminal sessions to all append to one zsh command history
+setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
+setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
+
 
 # Use modern completion system
 autoload -Uz compinit
@@ -58,6 +63,7 @@ fi
 alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 
 # 10ms for key sequences (for going between vim normal and insert modes)
@@ -141,12 +147,17 @@ alias ptvi='ptipython --vi'
 #export RSTUDIO_WHICH_R=/usr/local/bin/R
 
 # git shortcuts
-#alias gh='git hist' ## hist is also an alias inside .gitconfig
+#alias gb='git branch '
+#alias gc='git checkout '
+#alias gcb='git checkout -b'
+#alias ga='git add '
+#alias gcm='git commit -m '
+#alias gp='git push '
+#alias gpu='git pull'
+#alias gcl='git clone'
 #alias gs='git status '
 #alias gd='git diff'
-##alias gb='git branch '
-##alias ga='git add '
-#alias gc='git commit -m '
-##alias gco='git checkout '
+#alias gh='git hist' ## hist is also an alias inside .gitconfig
+#alias gl='git log'
 #alias gk='gitk --all&'
 #alias gx='gitx --all'
