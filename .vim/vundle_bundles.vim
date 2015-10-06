@@ -13,8 +13,10 @@ Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'davidhalter/jedi-vim'
 "Bundle 'terryma/vim-multiple-cursors'
+
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'Lokaltog/powerline'

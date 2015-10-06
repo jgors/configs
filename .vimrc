@@ -642,9 +642,17 @@ endfunction
 " NERDTREE
 "
 " Visual file browser
-" <leader> nt
-"
-noremap <silent> <leader>nt :NERDTreeToggle<CR>
+"noremap <silent> <leader>nt :NERDTreeToggle<CR>
+" show me the hidden files as well.
+let NERDTreeShowHidden=1
+
+" Instead of just plain nerdtree, use this:
+" USE NERDTREE along with VIM-NERD-TREE-TABS to open nerdtree in all tabs at once 
+noremap <Leader>nt :NERDTreeTabsToggle<CR>
+" find currently opened file and jump to it in nerdtree pane
+noremap <Leader>nf :NERDTreeTabsFind<CR>
+" don't open NERDTree on gvim startup
+let g:nerdtree_tabs_open_on_gui_startup=0
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 "
