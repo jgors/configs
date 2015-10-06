@@ -645,7 +645,7 @@ endfunction
 "noremap <silent> <leader>nt :NERDTreeToggle<CR>
 " show me the hidden files as well.
 let NERDTreeShowHidden=1
-let NERDTreeWinSize=25
+"let NERDTreeWinSize=25
 
 " Instead of just plain nerdtree, use this:
 " USE NERDTREE along with VIM-NERD-TREE-TABS to open nerdtree in all tabs at once 
