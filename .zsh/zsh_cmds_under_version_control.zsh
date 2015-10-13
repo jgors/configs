@@ -10,9 +10,10 @@ promptinit
 HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
-setopt append_history # Allow multiple terminal sessions to all append to one zsh command history
 setopt hist_expire_dups_first # when trimming history, lose oldest duplicates first
 setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
+setopt share_history
+setopt inc_append_history
 
 
 # Use modern completion system
@@ -99,10 +100,11 @@ zle -N zle-line-init
 
 # command prompt on the left
 # displays pwd and if inside a git repo, then the current branch; next,
-# user@hostname, then `%` if logged in as normal user or `#` if logged in as root
+# user@hostname, then `$` if logged in as normal user or `#` if logged in as root
 PS1="
 %{$fg[blue]%}[%~]% %{$fg[red]%}\$vcs_info_msg_0_ %{$reset_color%}
-%{$fg_bold[cyan]%}%n%{$fg_no_bold[cyan]%}@%{$fg_bold[cyan]%}%M %{$fg_no_bold[green]%}%# %{$reset_color%}"
+%{$fg_bold[cyan]%}%n%{$fg_no_bold[cyan]%}@%{$fg_bold[cyan]%}%M \
+%{$fg_no_bold[green]%}%(!.#.$) %{$reset_color%}"
 ####
 
 
