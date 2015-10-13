@@ -168,6 +168,12 @@ set clipboard+=unnamed              " copy/paste between vim sessions play nicer
 " Preserve indentation while pasting text from the clipboard
 "noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
+"Automatically jump to end of pasted text:
+"paste multiple lines multiple times by pressing p
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " ---------------------------------------------------------------------------------------
 " WINDOW Resizing
 set noequalalways                   " wins are NOT automatically made the same size after splitting or closing a win

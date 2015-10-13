@@ -35,6 +35,7 @@ Bundle 'ervandew/supertab'
 "Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 "Bundle 'blueyed/vim-diminactive'
+"Bundle 'terryma/vim-expand-region'
 
 Bundle 'carlobaldassi/ConqueTerm'
 Bundle 'benmills/vimux'
