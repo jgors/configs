@@ -12,6 +12,8 @@ ln -s -v ~/.configs/.vimrc ~/.vimrc
 
 echo
 echo "--> Replacing ~/.vim dir with link from ~/.configs..."
+# create the undo dir if it doesn't already exist (but it shouldn't actually)
+[ ! -d ~/.configs/.vim/undodir ] && mkdir ~/.configs/.vim/undodir
 rm -rf ~/.vim 
 ln -s -v ~/.configs/.vim ~/.vim
 

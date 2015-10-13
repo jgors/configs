@@ -59,8 +59,8 @@ set noswapfile                      " ...or swap file
 "set backup                          " enable backups
 "set backupdir=~/.vim/tmp/backup/    " backup location
 "set directory=~/.vim/tmp/swap/      " swap files
-"set undodir=~/.vim/tmp/undo/        " undo files
-"set undofile                        " create .un~ files; contain undo info, even after reopening file.
+set undofile                        " create .un~ files; contain undo info, even after reopening file.
+set undodir=~/.vim/undodir          " for undo files
 set autochdir                       " automatically change wins cwd to the current file's dir (for gvim)
 set autowrite                       " write the contents, if the file has been modified
 set autoread                        " if a file has been changed outside of Vim & has not been changed
