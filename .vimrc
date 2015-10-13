@@ -65,6 +65,8 @@ set autochdir                       " automatically change wins cwd to the curre
 set autowrite                       " write the contents, if the file has been modified
 set autoread                        " if a file has been changed outside of Vim & has not been changed
                                     " inside of Vim, automatically read it again.
+set encoding=utf-8
+set ttyfast                         " indicates a fast terminal connection
 
 
 " F9 creates a word processing(ish) mode
