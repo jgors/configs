@@ -57,9 +57,10 @@ set undolevels=1000                 " max number of changes that can be undone
 set viminfo='20,\"80                " read/write a .viminfo file & don't store more than 80 lines of registers
 set nobackup                        " forbid vim to write a backup...
 set noswapfile                      " ...or swap file
-"set backup                          " enable backups
-"set backupdir=~/.vim/tmp/backup/    " backup location
-"set directory=~/.vim/tmp/swap/      " swap files
+set backup                          " enable backups
+set backupdir=/tmp                  " backup location
+set backupskip=/tmp/*
+set directory=/tmp                  " swap files
 set undofile                        " create .un~ files; contain undo info, even after reopening file.
 set undodir=~/.vim/undodir          " for undo files
 set autochdir                       " automatically change wins cwd to the current file's dir (for gvim)
@@ -68,6 +69,18 @@ set autoread                        " if a file has been changed outside of Vim 
                                     " inside of Vim, automatically read it again.
 set encoding=utf-8
 set ttyfast                         " indicates a fast terminal connection
+
+
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+nmap <silent> <F3> :call ToggleNumber()<CR>
 
 
 " F9 creates a word processing(ish) mode
@@ -373,14 +386,17 @@ let pyindent_open_paren="&sw*2"
 
 " ---------------------------------------------------------------------------------------
 " Folding
-
-" toggle folds
-map <leader>f zi
+"
+" toggle all folds
+map <leader>fa zi 
+" toggle folds around current block of code
+map <leader>fb za
 
 set foldmethod=indent           " folding based on indentation
-set foldnestmax=3               " deepest folding is at 3 levels
+"set foldlevelstart=10           " open most folds by default
+set foldnestmax=2               " deepest folding is at N levels
 set nofoldenable                " start w/ no folding
-"set foldcolumn=1                " add a fold column (don't like this in tmux)
+set foldcolumn=1                " add a fold column (don't like this in tmux)
 
 " ---------------------------------------------------------------------------------------
 
