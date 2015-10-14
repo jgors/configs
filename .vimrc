@@ -396,7 +396,7 @@ set foldmethod=indent           " folding based on indentation
 "set foldlevelstart=10           " open most folds by default
 set foldnestmax=2               " deepest folding is at N levels
 set nofoldenable                " start w/ no folding
-set foldcolumn=1                " add a fold column (don't like this in tmux)
+"set foldcolumn=1                " add a fold column (don't like this in tmux)
 
 " ---------------------------------------------------------------------------------------
 
