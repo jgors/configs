@@ -42,6 +42,7 @@ set nowrap                          " don't line wrap text if it stretches past 
 set nostartofline                   " stop certain movements from going to 1st char of line
 set title                           " display window title
 set number                          " display line numbers
+set relativenumber                  " set line numbers relative to where currently at
 set noerrorbells                    " no beeps or flashes
 set ruler                           " display cursor position
 set showmode                        " show current mode
@@ -656,7 +657,7 @@ let NERDTreeShowHidden=1
 "let NERDTreeWinSize=25
 
 " Instead of just plain nerdtree, use this:
-" USE NERDTREE along with VIM-NERD-TREE-TABS to open nerdtree in all tabs at once 
+" USE NERDTREE along with VIM-NERD-TREE-TABS to open nerdtree in all tabs at once
 noremap <Leader>nt :NERDTreeTabsToggle<CR>
 " find currently opened file and jump to it in nerdtree pane
 noremap <Leader>nf :NERDTreeTabsFind<CR>
@@ -839,4 +840,3 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_python_ipython = 1
 xmap <leader>e <Plug>SlimeRegionSend
 "let g:slime_paste_file = "/tmp/.slime_paste"
-

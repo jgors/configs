@@ -19,9 +19,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'Lokaltog/powerline'
+"Bundle 'powerline/powerline'
 "Bundle 'bling/vim-airline'
-"
+
 Bundle 'fs111/pydoc.vim'
 "Bundle 'klen/python-mode'
 Bundle 'kevinw/pyflakes-vim'
