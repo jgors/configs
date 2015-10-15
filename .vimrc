@@ -71,18 +71,6 @@ set encoding=utf-8
 set ttyfast                         " indicates a fast terminal connection
 
 
-" toggle between number and relativenumber
-function! ToggleNumber()
-    if(&relativenumber == 1)
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-nmap <silent> <F3> :call ToggleNumber()<CR>
-
-
 " F9 creates a word processing(ish) mode
 " setlocal so it doesn't affect new buffers/tabs i open
 func! DocumentEditingMode()
@@ -856,3 +844,19 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_python_ipython = 1
 xmap <leader>e <Plug>SlimeRegionSend
 "let g:slime_paste_file = "/tmp/.slime_paste"
+
+
+"#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+" vim-relativity (using this instead of the func below)
+let g:relativity_insert_toggle = 0
+"
+" toggle between number and relativenumber
+"function! ToggleNumber()
+    "if(&relativenumber == 1)
+        "set norelativenumber
+        "set number
+    "else
+        "set relativenumber
+    "endif
+"endfunc
+"nmap <silent> <F3> :call ToggleNumber()<CR>
