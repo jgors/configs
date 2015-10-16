@@ -242,7 +242,7 @@ if has('gui_running')
     if has("gui_macvim")
         set guifont=Inconsolata:h16
     else
-        set guifont=Inconsolata\ 12
+        set guifont=Inconsolata\ 13
     endif
 
     " Different cursors for different modes.
