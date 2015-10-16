@@ -7,7 +7,7 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/colorsupport.vim'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-easymotion'
-"Bundle "merlinrebrovic/focus.vim"
+"Bundle 'merlinrebrovic/focus.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
