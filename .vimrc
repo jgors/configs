@@ -75,11 +75,13 @@ set ttyfast                         " indicates a fast terminal connection
 " setlocal so it doesn't affect new buffers/tabs i open
 func! DocumentEditingMode()
     setlocal formatoptions=1
+    set formatprg=par              " use par to format text
     set complete+=s
     setlocal spell spelllang=en_us
     :hi SpellBad ctermbg=LightMagenta
     :hi SpellCap ctermbg=LightBlue
     setlocal nonumber
+    setlocal norelativenumber
     setlocal noruler
     setlocal smartindent
     setlocal wrap
