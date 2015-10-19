@@ -860,3 +860,10 @@ let g:relativity_insert_toggle = 0
     "endif
 "endfunc
 "nmap <silent> <F3> :call ToggleNumber()<CR>
+
+
+"#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+" gutentags
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir="/tmp"
+noremap <C-]> g<C-]>

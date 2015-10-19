@@ -34,9 +34,11 @@ Bundle 'mhinz/vim-startify'
 Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
 "Bundle 'blueyed/vim-diminactive'
 "Bundle 'terryma/vim-expand-region'
+
+Bundle 'majutsushi/tagbar'
+Bundle 'ludovicchabant/vim-gutentags'
 
 Bundle 'carlobaldassi/ConqueTerm'
 Bundle 'benmills/vimux'
@@ -49,6 +51,8 @@ Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'tpope/vim-obsession'
 Bundle 'altercation/vim-colors-solarized'
+
+"Bundle 'jaxbot/browserlink.vim'
 
 Bundle 'jgors/vimux-ipy'
 Bundle 'jgors/vimux-r'
