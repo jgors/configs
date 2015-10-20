@@ -80,8 +80,8 @@ func! DocumentEditingMode()
     setlocal spell spelllang=en_us
     :hi SpellBad ctermbg=LightMagenta
     :hi SpellCap ctermbg=LightBlue
-    setlocal nonumber
     setlocal norelativenumber
+    setlocal nonumber
     setlocal noruler
     setlocal smartindent
     setlocal wrap
@@ -868,4 +868,5 @@ let g:relativity_insert_toggle = 0
 " gutentags
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir="/tmp"
+" ctrl-] to go to tag def if only one match or list all if many matches are found 
 noremap <C-]> g<C-]>
