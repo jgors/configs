@@ -92,7 +92,7 @@ func! DocumentEditingMode()
     noremap s ]s
     " zg == to add current misspelled word to dict
     " z == gives a list of potential matches for a misspelled word
-    noremap z z=
+    noremap zz z=
 endfu
 nmap <silent> <F9> :call DocumentEditingMode()<CR>
 
