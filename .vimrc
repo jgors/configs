@@ -35,7 +35,7 @@ set nowrap                          " don't line wrap text if it stretches past 
 "set showbreak=↪                    " put at the start of lines that have been wrapped
 "set textwidth=100                  " break lines when line length is too long
 "set colorcolumn=90                 " show colored column when a line of code is too long
-"if exists("&colorcolumn")           " have color column warn after 90 characters only in insert mode
+"if exists("&colorcolumn")          " have color column warn after 90 characters only in insert mode
     "autocmd InsertEnter * set colorcolumn=91
     "autocmd InsertLeave * set colorcolumn=""
 "endif
@@ -74,19 +74,34 @@ set ttyfast                         " indicates a fast terminal connection
 " F9 creates a word processing(ish) mode
 " setlocal so it doesn't affect new buffers/tabs i open
 func! DocumentEditingMode()
-    setlocal formatoptions=1
-    set formatprg=par              " use par to format text with `gq` (need to install par)
+    setlocal formatoptions=a,1,t,c
+    "set formatprg=par              " use par to format text with `gq` (need to install par)
     set complete+=s
     setlocal spell spelllang=en_us
     :hi SpellBad ctermbg=LightMagenta
     :hi SpellCap ctermbg=LightBlue
+
     :Relativity!
     setlocal norelativenumber
     setlocal nonumber
-    setlocal noruler
+
+    set nocursorline    " turns off highlight of the current line 
     setlocal smartindent
-    setlocal wrap
+    setlocal noruler
+    "set scrolloff=999   " stay in the middle when vertical scrolling
+    
+    :Goyo
+    g:goyo_width=120
+    g:goyo_margin_top=2
+    g:goyo_margin_bottom=2
     setlocal linebreak  " break lines on words, not in the middle of them
+    setlocal wrap
+    "set tw=100   " break lines when line length is too long
+    "setlocal columns=100
+    "set wrapmargin=10
+    "setlocal foldcolumn=5
+    ":hi FoldColumn ctermbg=NONE
+    
     " navigate misspelled words -- S goes to previous misspelled word, s goes to next one
     noremap S [s
     noremap s ]s
@@ -95,6 +110,7 @@ func! DocumentEditingMode()
     noremap zz z=
 endfu
 nmap <silent> <F9> :call DocumentEditingMode()<CR>
+
 
 " Tab completion settings for cmd window
 set wildmenu                                    " make tab completion for files/buffers act like bash
