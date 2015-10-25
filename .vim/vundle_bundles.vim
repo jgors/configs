@@ -55,7 +55,7 @@ Bundle 'altercation/vim-colors-solarized'
 "Bundle 'jaxbot/browserlink.vim'
 
 " for doc editing mode
-Bundle 'junegunn/goyo.vim'
+"Bundle 'junegunn/goyo.vim'
 "Bundle 'reedes/vim-pencil'
 
 Bundle 'jgors/vimux-ipy'

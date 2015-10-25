@@ -74,7 +74,7 @@ set ttyfast                         " indicates a fast terminal connection
 " F9 creates a word processing(ish) mode
 " setlocal so it doesn't affect new buffers/tabs i open
 func! DocumentEditingMode()
-    setlocal formatoptions=a,1,t,c
+    setlocal formatoptions+=a1ct
     "set formatprg=par              " use par to format text with `gq` (need to install par)
     set complete+=s
     setlocal spell spelllang=en_us
@@ -90,17 +90,17 @@ func! DocumentEditingMode()
     setlocal noruler
     "set scrolloff=999   " stay in the middle when vertical scrolling
     
-    :Goyo
-    g:goyo_width=120
-    g:goyo_margin_top=2
-    g:goyo_margin_bottom=2
+    ":Goyo
+    "g:goyo_width=120
+    "g:goyo_margin_top=2
+    "g:goyo_margin_bottom=2
     setlocal linebreak  " break lines on words, not in the middle of them
     setlocal wrap
     "set tw=100   " break lines when line length is too long
-    "setlocal columns=100
     "set wrapmargin=10
-    "setlocal foldcolumn=5
-    ":hi FoldColumn ctermbg=NONE
+    setlocal foldcolumn=5
+    :hi FoldColumn ctermbg=NONE
+
     
     " navigate misspelled words -- S goes to previous misspelled word, s goes to next one
     noremap S [s
