@@ -99,8 +99,7 @@ func! DocumentEditingMode()
     "set tw=100   " break lines when line length is too long
     "set wrapmargin=10
     setlocal foldcolumn=5
-    :hi FoldColumn ctermbg=NONE
-
+    :hi FoldColumn ctermbg=NONE guibg=NONE
     
     " navigate misspelled words -- S goes to previous misspelled word, s goes to next one
     noremap S [s
