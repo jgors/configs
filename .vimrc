@@ -86,15 +86,13 @@ func! DocumentEditingMode()
     setlocal norelativenumber
     setlocal nonumber
 
-    set nocursorline    " turns off highlight of the current line 
+    setlocal nocursorline    " turns off highlight of the current line 
     setlocal smartindent
     setlocal noruler
-    "set scrolloff=999   " stay in the middle when vertical scrolling
+    setlocal scrolloff=999   " stay in the middle when vertical scrolling
     
-    ":Goyo
-    "g:goyo_width=120
-    "g:goyo_margin_top=2
-    "g:goyo_margin_bottom=2
+    :Goyo
+    :Goyo 85%x90%
     setlocal linebreak  " break lines on words, not in the middle of them
     setlocal wrap
     "set tw=120   " break lines when line length is too long
