@@ -19,8 +19,8 @@ source ~/.configs/.vim/vundle_bundles.vim
 filetype plugin indent on           " allows use of plug-ins and such
 syntax on
 syntax enable
-"set smartindent                    " instead of these 2, using the google code below
-"set autoindent
+set smartindent                    " instead of these 2, using the google code below
+set autoindent
 set shiftwidth=4                    " # of spaces to use for autoindent
 set tabstop=4                       " makes tabs 4 spaces instead of 8
 set expandtab                       " turns tab in insert mode into appropriate # of spaces
@@ -74,7 +74,8 @@ set ttyfast                         " indicates a fast terminal connection
 " F9 creates a word processing(ish) mode
 " setlocal so it doesn't affect new buffers/tabs i open
 func! DocumentEditingMode()
-    setlocal formatoptions+=a1ct
+    "setlocal formatoptions+=tc1
+    setlocal formatoptions=1
     "set formatprg=par              " use par to format text with `gq` (need to install par)
     set complete+=s
     setlocal spell spelllang=en_us
@@ -96,7 +97,7 @@ func! DocumentEditingMode()
     "g:goyo_margin_bottom=2
     setlocal linebreak  " break lines on words, not in the middle of them
     setlocal wrap
-    "set tw=100   " break lines when line length is too long
+    "set tw=120   " break lines when line length is too long
     "set wrapmargin=10
     setlocal foldcolumn=5
     :hi FoldColumn ctermbg=NONE guibg=NONE
@@ -357,34 +358,34 @@ vmap <leader>l >gv
 
 
 " Indent Python in the Google way.
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-let s:maxoff = 50 " maximum number of lines to look backwards.
-function GetGooglePythonIndent(lnum)
-  " Indent inside parens.
-  " Align with the open paren unless it is at the end of the line.
-  " E.g.
-  "   open_paren_not_at_EOL(100,
-  "                         (200,
-  "                          300),
-  "                         400)
-  "   open_paren_at_EOL(
-  "       100, 200, 300, 400)
-  call cursor(a:lnum, 1)
-  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        \ . " =~ '\\(Comment\\|String\\)$'")
-  if par_line > 0
-    call cursor(par_line, 1)
-    if par_col != col("$") - 1
-      return par_col
-    endif
-  endif
+"setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+"let s:maxoff = 50 " maximum number of lines to look backwards.
+"function GetGooglePythonIndent(lnum)
+  "" Indent inside parens.
+  "" Align with the open paren unless it is at the end of the line.
+  "" E.g.
+  ""   open_paren_not_at_EOL(100,
+  ""                         (200,
+  ""                          300),
+  ""                         400)
+  ""   open_paren_at_EOL(
+  ""       100, 200, 300, 400)
+  "call cursor(a:lnum, 1)
+  "let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        "\ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        "\ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        "\ . " =~ '\\(Comment\\|String\\)$'")
+  "if par_line > 0
+    "call cursor(par_line, 1)
+    "if par_col != col("$") - 1
+      "return par_col
+    "endif
+  "endif
 
-  " Delegate the rest to the original function.
-  return GetPythonIndent(a:lnum)
+  "" Delegate the rest to the original function.
+  "return GetPythonIndent(a:lnum)
 
-endfunction
+"endfunction
 
 let pyindent_nested_paren="&sw*2"
 let pyindent_open_paren="&sw*2"
