@@ -8,12 +8,13 @@ Bundle 'vim-scripts/colorsupport.vim'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'merlinrebrovic/focus.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'davidhalter/jedi-vim'
 "Bundle 'terryma/vim-multiple-cursors'
 Bundle 'kennykaye/vim-relativity'
+Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -55,7 +56,7 @@ Bundle 'altercation/vim-colors-solarized'
 "Bundle 'jaxbot/browserlink.vim'
 
 " for doc editing mode
-"Bundle 'junegunn/goyo.vim'
+Bundle 'junegunn/goyo.vim'
 "Bundle 'reedes/vim-pencil'
 
 Bundle 'jgors/vimux-ipy'
