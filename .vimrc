@@ -184,7 +184,7 @@ set clipboard+=unnamed              " copy/paste between vim sessions play nicer
 "nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "" Disable autoindent to paste indented text.
-"set pastetoggle=<F3>
+set pastetoggle=<F3>
 
 " Preserve indentation while pasting text from the clipboard
 "noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
