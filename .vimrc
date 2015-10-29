@@ -13,14 +13,11 @@ source ~/.configs/.vim/vundle_bundles.vim
 """""""""""""""""""""""""""""""""""
 
 
-" PATHOGEN PLUG-IN
-"call pathogen#infect()
-
 filetype plugin indent on           " allows use of plug-ins and such
 syntax on
 syntax enable
 set smartindent                    " instead of these 2, using the google code below
-set autoindent
+set autoindent                      " copy indent from current line when starting a new line
 set shiftwidth=4                    " # of spaces to use for autoindent
 set tabstop=4                       " makes tabs 4 spaces instead of 8
 set expandtab                       " turns tab in insert mode into appropriate # of spaces
