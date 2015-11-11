@@ -16,7 +16,7 @@ source ~/.configs/.vim/vundle_bundles.vim
 filetype plugin indent on           " allows use of plug-ins and such
 syntax on
 syntax enable
-set smartindent                    " instead of these 2, using the google code below
+"set smartindent                    " instead of these 2, using the google code below (smartindent doesn't play nice w/ python)
 set autoindent                      " copy indent from current line when starting a new line
 set shiftwidth=4                    " # of spaces to use for autoindent
 set tabstop=4                       " makes tabs 4 spaces instead of 8
@@ -83,11 +83,11 @@ func! DocumentEditingMode()
     setlocal norelativenumber
     setlocal nonumber
 
-    setlocal nocursorline    " turns off highlight of the current line 
+    setlocal nocursorline    " turns off highlight of the current line
     setlocal smartindent
     setlocal noruler
     setlocal scrolloff=999   " stay in the middle when vertical scrolling
-    
+
     :Goyo
     :Goyo 85%x90%
     setlocal linebreak  " break lines on words, not in the middle of them
@@ -96,7 +96,7 @@ func! DocumentEditingMode()
     "set wrapmargin=10
     setlocal foldcolumn=5
     :hi FoldColumn ctermbg=NONE guibg=NONE
-    
+
     " navigate misspelled words -- S goes to previous misspelled word, s goes to next one
     noremap S [s
     noremap s ]s
@@ -224,8 +224,18 @@ autocmd Bufwritepre,filewritepre *.py execute "normal ma"
 "autocmd bufwritepost,filewritepost *.py execute "normal `a"
 
 
-" Remove extra whitespace from the ends of lines when saving
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+" Remove extra whitespace when saving
+"autocmd BufWritePre * :%s/\s\+$//<CR>:let @/=''<CR>
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+"autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 
 " HTML
 " Highlight code more nicely
@@ -241,16 +251,27 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 " Mode Settings
 set antialias
 
-colorscheme like_jazz "colorscheme i created
-"colorscheme wombat
+colorscheme like_jazz "colorscheme i made
+
 "colorscheme chela_light
-"colorscheme morning
+"colorscheme moria "not too bad
+"colorscheme peaksea
+"colorscheme PaperColor
+"colorscheme cascadia
+"colorscheme beauty256
+"colorscheme bclear
+"colorscheme pyte
+"colorscheme hybrid
+"colorscheme sol-term
+"colorscheme Tomorrow
+
 
 if has('gui_running')
     "set background=dark
 
-    "colorscheme solarized
-    "colorscheme phd "DARKER --> wombat; jellybeans; phd
+    "colorscheme phd "darker theme
+    "colorscheme iceberg "nice dark blue theme (only in gvim)
+    "colorscheme materialbox "light theme (only in gvim)
 
     "FONTS
     if has("gui_macvim")
@@ -267,7 +288,7 @@ if has('gui_running')
 else " Console Vim
     "set background=light
 
-    "colorscheme like_jazz "colorscheme i created
+    "colorscheme like_jazz
 
     "FONTS
     "In console mode, Vim is uses the current font of the terminal;
@@ -390,7 +411,7 @@ let pyindent_open_paren="&sw*2"
 " Folding
 "
 " toggle all folds
-map <leader>fa zi 
+map <leader>fa zi
 " toggle folds around current block of code
 map <leader>fb za
 
@@ -880,5 +901,5 @@ let g:relativity_insert_toggle = 0
 " gutentags
 set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir="/tmp"
-" ctrl-] to go to tag def if only one match or list all if many matches are found 
+" ctrl-] to go to tag def if only one match or list all if many matches are found
 noremap <C-]> g<C-]>

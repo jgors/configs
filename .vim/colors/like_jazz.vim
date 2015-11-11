@@ -2,7 +2,7 @@
 " Created by Jason Gors
 " Created 2009
 "
-" like_jazz.vim 
+" like_jazz.vim
 " ========================
 "
 
@@ -19,6 +19,13 @@ let colors_name = "like_jazz"
 " normal is the background color
 "hi Normal               guifg=#000000       guibg=#ffffff
 hi Normal                guifg=Black         guibg=grey97
+"hi Normal                guifg=Black         guibg=WhiteSmoke
+"hi Normal                guifg=Black         guibg=DarkSlateGray1
+"hi Normal                guifg=Black         guibg=CadetBlue1
+"hi Normal                guifg=Black         guibg=seashell1
+"hi Normal                guifg=Black         guibg=snow2
+"hi Normal                guifg=Black         guibg=LightCyan
+
 
 "hi NonText              guifg=#438ec3       guibg=gray90
 " from chela_light:
@@ -26,7 +33,7 @@ hi Normal                guifg=Black         guibg=grey97
 "hi nontext              guifg=#999999       guibg=#fafafa   gui=none
 
 " Search
-hi Search               guifg=Black         guibg=Yellow 
+hi Search               guifg=Black         guibg=Yellow
 hi IncSearch            guifg=#708090       guibg=#f0e68c
 
 " Interface Elements
@@ -52,7 +59,7 @@ hi Special              guifg=#fd8900
 hi Conditional          guifg=DarkViolet                    gui=bold
 hi String               guifg=Red
 hi Number               guifg=DarkBlue
-hi Constant             guifg=#0086d2 
+hi Constant             guifg=#0086d2
 hi Statement            guifg=Blue                          "gui=bold
 hi Function             guifg=Magenta                       "gui=bold
 
@@ -63,7 +70,8 @@ hi Function             guifg=Magenta                       "gui=bold
 "hi Comment              guifg=#339900       guibg=#fafafa   gui=italic
 "
 "hi Comment              guifg=#339900       guibg=#fafafa
-hi Comment               guifg=#339900       guibg=grey97
+"hi Comment               guifg=#786000
+hi Comment               guifg=#339900
 
 
 " for ipython code in conque-term
