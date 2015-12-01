@@ -39,7 +39,7 @@ set nowrap                          " don't line wrap text if it stretches past 
 set nostartofline                   " stop certain movements from going to 1st char of line
 set title                           " display window title
 set number                          " display line numbers
-set relativenumber                  " set line numbers relative to where currently at
+"set relativenumber                  " set line numbers relative to where currently at
 set noerrorbells                    " no beeps or flashes
 set ruler                           " display cursor position
 set showmode                        " show current mode
