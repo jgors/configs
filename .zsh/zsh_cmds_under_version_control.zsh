@@ -14,6 +14,8 @@ setopt hist_expire_dups_first # when trimming history, lose oldest duplicates fi
 setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
 setopt share_history
 setopt inc_append_history
+setopt autocd extendedglob nomatch notify
+unsetopt beep
 
 
 # Use modern completion system
@@ -40,7 +42,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 #############################################################################
-# Config of ZSH itself 
+# Config of ZSH itself
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
 
 #setopt completealiases
@@ -68,7 +70,7 @@ alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^
 
 
 # 10ms for key sequences (for going between vim normal and insert modes)
-#KEYTIMEOUT=1 
+#KEYTIMEOUT=1
 
 # switch to COMMAND mode by using "jj" instead of ESC (but need to turn off the KEYTIMEOUT above)
 bindkey -M viins 'jj' vi-cmd-mode
@@ -108,15 +110,15 @@ PS1="
 ####
 
 
-#only past commands beginning with the current input will be shown, 
+#only past commands beginning with the current input will be shown,
 # this does it for the up and down arrow keys in NORMAL mode
-bindkey "^[[A" history-beginning-search-backward 
+bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 # this does it for the j (down/more recent in hist) and k (up/older in hist) in COMMAND/vim mode
 # http://stackoverflow.com/questions/3127392/backward-search-in-vi-mode
-bindkey -M vicmd "k" history-beginning-search-backward 
-bindkey -M vicmd "j" history-beginning-search-forward 
+bindkey -M vicmd "k" history-beginning-search-backward
+bindkey -M vicmd "j" history-beginning-search-forward
 
 # To move to the beginning of the line (H) or end of a line (L) in vi COMMAND mode
 bindkey -M vicmd "H" vi-beginning-of-line
@@ -127,7 +129,7 @@ bindkey -M vicmd "L" vi-end-of-line
 #alias tmux="TERM=screen-256color tmux"
 TERM=screen-256color
 
-# end of ZSH config 
+# end of ZSH config
 #############################################################################
 
 
