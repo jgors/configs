@@ -39,7 +39,7 @@ set nowrap                          " don't line wrap text if it stretches past 
 set nostartofline                   " stop certain movements from going to 1st char of line
 set title                           " display window title
 set number                          " display line numbers
-set relativenumber                  " set line numbers relative to where currently at
+"set relativenumber                  " set line numbers relative to where currently at
 set noerrorbells                    " no beeps or flashes
 set ruler                           " display cursor position
 set showmode                        " show current mode
@@ -79,8 +79,8 @@ func! DocumentEditingMode()
     :hi SpellBad ctermbg=LightMagenta
     :hi SpellCap ctermbg=LightBlue
 
-    :Relativity!
-    setlocal norelativenumber
+    ":Relativity!
+    "setlocal norelativenumber
     setlocal nonumber
 
     setlocal nocursorline    " turns off highlight of the current line
@@ -534,10 +534,10 @@ let g:ctrlp_open_new_file = 1
 " tagbar.vim
 " To see source code in side panel
 
-nmap <F4> :TagbarToggle<CR>
+"nmap <F4> :TagbarToggle<CR>
 
 " Sort tags by order in file, not by alphabetical order
-let g:tagbar_sort = 0
+"let g:tagbar_sort = 0
 
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
@@ -594,31 +594,31 @@ map <leader>rs :call conque_term#open('R', ['below split', 'resize 20'], 0)<cr>
 
 " _______VIMUX_______
 
-map <Leader>vip :call MyVimuxEnvir("ipy")<CR>
-map <Leader>vr :call MyVimuxEnvir("r")<CR>
+"map <Leader>vip :call MyVimuxEnvir("ipy")<CR>
+"map <Leader>vr :call MyVimuxEnvir("r")<CR>
 
-function! MyVimuxEnvir(environ)
+"function! MyVimuxEnvir(environ)
 
-    " Run a visual highlighted chunk of code in the vimux split
-    vmap <silent> <Leader>e :python run_visual_code()<CR>
+    "" Run a visual highlighted chunk of code in the vimux split
+    "vmap <silent> <Leader>e :python run_visual_code()<CR>
 
-    " Execute cell & decide whether to leave cursor at point of execution
-    "noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
-    noremap <silent> <Leader>c :python run_cell(save_position=False, cell_delim='# <codecell>')<CR>
+    "" Execute cell & decide whether to leave cursor at point of execution
+    ""noremap <silent> <Leader>c :python run_cell(save_position=False)<CR>
+    "noremap <silent> <Leader>c :python run_cell(save_position=False, cell_delim='# <codecell>')<CR>
 
-    " Open a split with ipython [R, etc] by running the approp function
-    if a:environ == 'ipy'
-        "call VimuxIpy()
-        call VimuxIpy("ipython --pylab")
-        "call VimuxIpy("ipython --profile=ssh")
-        "probably don't start ipython inside tmux like this:
-        "call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh")
+    "" Open a split with ipython [R, etc] by running the approp function
+    "if a:environ == 'ipy'
+        ""call VimuxIpy()
+        "call VimuxIpy("ipython --pylab")
+        ""call VimuxIpy("ipython --profile=ssh")
+        ""probably don't start ipython inside tmux like this:
+        ""call VimuxIpy("ipcluster start --profile=ssh &; ipython --profile=ssh")
 
-    elseif a:environ == 'r'
-        call VimuxR()
+    "elseif a:environ == 'r'
+        "call VimuxR()
 
-    endif
-endfunction
+    "endif
+"endfunction
 
 
 
@@ -883,8 +883,8 @@ xmap <leader>e <Plug>SlimeRegionSend
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 " vim-relativity (using this instead of the func below)
-let g:relativity_insert_toggle = 0
-"
+"let g:relativity_insert_toggle = 0
+
 " toggle between number and relativenumber
 "function! ToggleNumber()
     "if(&relativenumber == 1)

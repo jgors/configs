@@ -1,8 +1,8 @@
 """" Put My Bundles here:
 
-" Vundle manages itself -- required! 
+" Vundle manages itself -- required!
 Bundle 'gmarik/vundle'
- 
+
 """ repos on github
 Bundle 'vim-scripts/colorsupport.vim'
 Bundle 'kien/ctrlp.vim'
@@ -12,8 +12,9 @@ Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'davidhalter/jedi-vim'
 "Bundle 'terryma/vim-multiple-cursors'
-Bundle 'kennykaye/vim-relativity'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'kennykaye/vim-relativity'
+"
+"Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
 Bundle 'scrooloose/nerdcommenter'
@@ -27,8 +28,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'fs111/pydoc.vim'
 "Bundle 'klen/python-mode'
 Bundle 'kevinw/pyflakes-vim'
+
 "Bundle 'vim-scripts/Rainbow-Parentheses-Improved'
-Bundle 'danro/rename.vim'
+"Bundle 'danro/rename.vim'
 "Bundle 'kshenoy/vim-signature'
 "Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
@@ -38,11 +40,11 @@ Bundle 'ervandew/supertab'
 "Bundle 'blueyed/vim-diminactive'
 "Bundle 'terryma/vim-expand-region'
 
-Bundle 'majutsushi/tagbar'
+"Bundle 'majutsushi/tagbar'
 Bundle 'ludovicchabant/vim-gutentags'
 
 Bundle 'carlobaldassi/ConqueTerm'
-Bundle 'benmills/vimux'
+"Bundle 'benmills/vimux'
 Bundle 'jpalardy/vim-slime'
 "Bundle 'julienr/vim-cellmode'
 
@@ -50,8 +52,8 @@ Bundle 'christoomey/vim-tmux-navigator'
 "Bundle 'FredKSchott/CoVim'
 
 "Bundle 'Valloric/YouCompleteMe'
-Bundle 'tpope/vim-obsession'
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'tpope/vim-obsession'
+"Bundle 'altercation/vim-colors-solarized'
 
 "Bundle 'jaxbot/browserlink.vim'
 
@@ -59,8 +61,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/goyo.vim'
 "Bundle 'reedes/vim-pencil'
 
-Bundle 'jgors/vimux-ipy'
-Bundle 'jgors/vimux-r'
+"Bundle 'jgors/vimux-ipy'
+"Bundle 'jgors/vimux-r'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 """ vim-scripts repos
