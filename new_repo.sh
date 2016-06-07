@@ -13,10 +13,11 @@ echo "\n--> Changing default shell to zsh"
 sudo chsh -s /bin/zsh
 
 vundle_dir=~/.configs/.vim/bundle/vundle
-echo "\n--> Installing Vundle in" $vundle_dir
 if [ ! -d $vundle_dir ]; then
+    echo "\n--> Installing Vundle in" $vundle_dir
     git clone https://github.com/gmarik/vundle.git $vundle_dir
 else
+    echo "\n--> Updating Vundle in" $vundle_dir
     cd $vundle_dir
     git pull
 fi
@@ -52,7 +53,7 @@ echo "\nAdding sourced zsh file to" $zshrc
 if [ ! -e $zshrc ]; then
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> $zshrc
 else
-    echo '\n#########################################'
+    echo '#########################################'
     echo $zshrc "ALREADY EXISTS -- make sure this is at the top of it:"
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
     echo '#########################################'
