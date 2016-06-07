@@ -1,56 +1,68 @@
 #! /bin/bash
 
-echo "--> INSTALLING SYSTEM PKGS"
+echo "\n--> INSTALLING SYSTEM PKGS"
 sudo apt-get update
 sudo apt-get install vim vim-gnome zsh tmux python-pip htop
 pip install pip --user --upgrade
 pip install ipython --user --upgrade
 
-echo "--> Changing default shell to zsh"
+configs=~/.configs
+
+echo "\n--> Changing default shell to zsh"
 #sudo chsh -s $(which zsh) $(whoami)
 sudo chsh -s /bin/zsh
 
-echo "--> Installing Vundle in .configs/.vim/bundle/vundle"
-git clone https://github.com/gmarik/vundle.git ~/.configs/.vim/bundle/vundle
+vundle_dir=~/.configs/.vim/bundle/vundle
+echo "\n--> Installing Vundle in" $vundle_dir
+if [ ! -d $vundle_dir ]; then
+    git clone https://github.com/gmarik/vundle.git $vundle_dir
+else
+    cd $vundle_dir
+    git pull
+fi
 
-cd ~/.configs
+vimrc=~/.vimrc
+echo "\n--> Replacing" $vimrc "file with link from" $configs
+rm -rf $vimrc
+#mv ~/{.vimrc,.vimrc_old}
+ln -s -v ~/.configs/.vimrc $vimrc
 
-echo
-echo "--> Replacing ~/.vimrc file with link from ~/.configs"
-mv ~/{.vimrc,.vimrc_old}
-ln -s -v ~/.configs/.vimrc ~/.vimrc
-
-echo
-echo "--> Replacing ~/.vim dir with link from ~/.configs"
+vim_dir = ~/.vim
+echo "\n--> Replacing" $vim_dir "dir with link from" $configs
 # create the undo dir if it doesn't already exist (but it shouldn't)
 [ ! -d ~/.configs/.vim/undodir ] && mkdir ~/.configs/.vim/undodir
-#rm -rf ~/.vim
-mv ~/{.vim,.vim_old}
-ln -s -v ~/.configs/.vim ~/.vim
+rm -rf $vim_dir
+#mv ~/{.vim,.vim_old}
+ln -s -v ~/.configs/.vim $vim_dir
 
-echo
-echo "--> Replacing ~/.tmux.conf file with link from ~/.configs"
-#rm ~/.tmux.conf
-mv ~/{.tmux.conf,.tmux_old.conf}
-ln -s -v ~/.configs/.tmux.conf ~/.tmux.conf
+tmux_conf=~/.tmux.conf
+echo "\n--> Replacing" $tmux_conf "file with link from" $configs
+rm $tmux_conf
+#mv ~/{.tmux.conf,.tmux_old.conf}
+ln -s -v ~/.configs/.tmux.conf $tmux_conf
 
-echo
-echo "--> Replacing ~/.zsh dir with link from ~/.configs"
-#rm -rf ~/.zsh
-mv ~/{.zsh,.zsh_old}
-ln -s -v ~/.configs/.zsh ~/.zsh
-echo "############################################"
-#echo "NOTE:  ADD THIS AT THE TOP OF ~/.zshrc file:"
-#echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
-echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> ~/.zshrc
-echo "############################################"
+zsh_dir=~/.zsh
+echo "\n--> Replacing" $zsh_dir "dir with link from" $configs
+rm -rf $zsh_dir
+#mv ~/{.zsh,.zsh_old}
+ln -s -v ~/.configs/.zsh $zsh_dir
 
-echo
-echo "--> Replacing ~/.inputrc file with link from ~/.configs"
-#rm ~/.inputrc
-mv ~/{.inputrc,.inputrc_old}
-ln -s -v ~/.configs/.inputrc ~/.inputrc
+zshrc=~/.zshrc
+echo "\nAdding sourced zsh file to top of" $zshrc
+if [ ! -e $zshrc ]; then
+    echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> $zshrc
+else
+    echo '#########################################'
+    echo $zshrc "already exists -- make sure this is in it:"
+    echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
+    echo '#########################################'
+fi
 
-echo
-echo "--> Updating all Vundle Bundles..."
+inputrc=~/.inputrc
+echo "\n--> Replacing" $inputrc "file with link from" $configs
+rm $inputrc
+#mv ~/{.inputrc,.inputrc_old}
+ln -s -v ~/.configs/.inputrc $inputrc
+
+echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
