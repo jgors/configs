@@ -48,7 +48,7 @@ rm -rf $zsh_dir
 ln -s -v ~/.configs/.zsh $zsh_dir
 
 zshrc=~/.zshrc
-echo "\nAdding sourced zsh file to top of" $zshrc
+echo "\nAdding sourced zsh file to" $zshrc
 if [ ! -e $zshrc ]; then
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> $zshrc
 else
