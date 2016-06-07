@@ -52,8 +52,8 @@ echo "\nAdding sourced zsh file to" $zshrc
 if [ ! -e $zshrc ]; then
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> $zshrc
 else
-    echo '#########################################'
-    echo $zshrc "already exists -- make sure this is at the top of it:"
+    echo '\n#########################################'
+    echo $zshrc "ALREADY EXISTS -- make sure this is at the top of it:"
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
     echo '#########################################'
 fi
