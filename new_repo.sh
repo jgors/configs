@@ -23,11 +23,11 @@ fi
 
 vimrc=~/.vimrc
 echo "\n--> Replacing" $vimrc "file with link from" $configs
-rm -rf $vimrc
+rm $vimrc
 #mv ~/{.vimrc,.vimrc_old}
 ln -s -v ~/.configs/.vimrc $vimrc
 
-vim_dir = ~/.vim
+vim_dir=~/.vim
 echo "\n--> Replacing" $vim_dir "dir with link from" $configs
 # create the undo dir if it doesn't already exist (but it shouldn't)
 [ ! -d ~/.configs/.vim/undodir ] && mkdir ~/.configs/.vim/undodir
@@ -53,7 +53,7 @@ if [ ! -e $zshrc ]; then
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh" >> $zshrc
 else
     echo '#########################################'
-    echo $zshrc "already exists -- make sure this is in it:"
+    echo $zshrc "already exists -- make sure this is at the top of it:"
     echo "source ~/.zsh/zsh_cmds_under_version_control.zsh"
     echo '#########################################'
 fi
