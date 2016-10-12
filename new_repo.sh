@@ -68,6 +68,7 @@ ln -s -v ~/.configs/.inputrc $inputrc
 echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
 
+echo "\n--> Setting up ipython to use vim keybindings"
 ipython profile create
 cp ~/.configs/ipy5_keybindings.py ~/.ipython/profile_default/startup/
 python ~/.configs/update_ipython_config.py
