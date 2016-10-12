@@ -69,5 +69,6 @@ echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
 
 ipython profile create
-cp ./ipy5_keybindings.py ~/.ipython/profile_default/startup/
-python update_ipython_config.py
+cp ~/.configs/ipy5_keybindings.py ~/.ipython/profile_default/startup/
+python ~/.configs/update_ipython_config.py
+
