@@ -67,3 +67,7 @@ ln -s -v ~/.configs/.inputrc $inputrc
 
 echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
+
+ipython profile create
+cp ./ipy5_keybindings.py ~/.ipython/profile_default/startup/
+python update_ipython_config.py
