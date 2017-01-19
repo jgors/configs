@@ -2,7 +2,7 @@
 
 echo "\n--> INSTALLING SYSTEM PKGS"
 sudo apt-get update
-sudo apt-get install vim vim-gnome zsh tmux python-pip htop exuberant-ctags
+sudo apt-get install vim vim-gnome zsh tmux python-pip htop exuberant-ctags fonts-inconsolata
 pip install pip --user --upgrade
 pip install ipython --user --upgrade
 
@@ -10,6 +10,7 @@ configs=~/.configs
 
 echo "\n--> Changing default shell to zsh"
 #sudo chsh -s $(which zsh) $(whoami)
+chsh -s /bin/zsh
 sudo chsh -s /bin/zsh
 
 vundle_dir=~/.configs/.vim/bundle/vundle
