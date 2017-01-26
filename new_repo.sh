@@ -10,9 +10,9 @@ pip install jupyter --user --upgrade
 configs=~/.configs
 
 echo "\n--> Changing default shell to zsh"
-#sudo chsh -s $(which zsh) $(whoami)
-chsh -s /bin/zsh
-sudo chsh -s /bin/zsh
+sudo chsh -s $(which zsh) $(whoami)
+#chsh -s /bin/zsh
+#sudo chsh -s /bin/zsh
 
 vundle_dir=~/.configs/.vim/bundle/vundle
 if [ ! -d $vundle_dir ]; then
