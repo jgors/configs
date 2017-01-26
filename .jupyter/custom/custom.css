@@ -1,0 +1,24 @@
+/* This didn't work, so I changed the code directly in
+   ~/.local/share/jupyter/nbextensions/vim_binding/vim_binding.css
+   so that the background doesn't change colors when
+   switching between normal and insert modes. */
+/*
+.edit_mode .cell.selected .CodeMirror-focused.cm-fat-cursor {
+  background-color: #F1EFF0}
+.edit_mode .cell.selected .CodeMirror-focused:not(.cm-fat-cursor) {
+  background-color: #F1EFF0}
+*/
+
+
+/* To change the font in the code cells; for more options see:
+https://developers.google.com/fonts/docs/getting_started */
+
+/*@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro');*/
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+.CodeMirror pre {
+        /*it goes like this:
+          font-family: 1st_font_to_use, backup_font_to_use, etc, what_to_use_font_for */
+        /*font-family: Consolas, monospace;*/
+        /*font-family: 'Source Code Pro', Consolas, monospace;*/
+        font-family: Inconsolata, Consolas, monospace;
+}

@@ -5,6 +5,7 @@ sudo apt-get update
 sudo apt-get install vim vim-gnome zsh tmux python-pip htop exuberant-ctags fonts-inconsolata
 pip install pip --user --upgrade
 pip install ipython --user --upgrade
+pip install jupyter --user --upgrade
 
 configs=~/.configs
 
@@ -74,3 +75,14 @@ ipython profile create
 cp ~/.configs/ipy5_keybindings.py ~/.ipython/profile_default/startup/
 python ~/.configs/update_ipython_config.py
 
+echo "\n--> Setting up jupyter to use vim keybindings in notebook"
+echo "--> NOTE:  for this to work, need to make sure this extension is"
+echo "--> installed:  https://github.com/lambdalisue/jupyter-vim-binding"
+if [ ! -d ~/.jupyter/custom ]; then
+    echo "\n--> making ~/.jupyter/custom"
+    cp -R $configs/.jupyter/custom ~/.jupyter
+else
+    echo "\n--> Updating ~/.jupyter/custom"
+    cp $configs/.jupyter/custom/custom.js ~/.jupyter/custom
+    cp $configs/.jupyter/custom/custom.css ~/.jupyter/custom
+fi
