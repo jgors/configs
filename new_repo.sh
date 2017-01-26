@@ -79,10 +79,10 @@ echo "\n--> Setting up jupyter to use vim keybindings in notebook"
 echo "--> NOTE:  for this to work, need to make sure this extension is"
 echo "--> installed:  https://github.com/lambdalisue/jupyter-vim-binding"
 if [ ! -d ~/.jupyter/custom ]; then
-    echo "\n--> making ~/.jupyter/custom"
+    echo "\n--> Making ~/.jupyter/custom"
     cp -R $configs/.jupyter/custom ~/.jupyter
 else
-    echo "\n--> Updating ~/.jupyter/custom"
+    echo "--> Updating ~/.jupyter/custom"
     cp $configs/.jupyter/custom/custom.js ~/.jupyter/custom
     cp $configs/.jupyter/custom/custom.css ~/.jupyter/custom
 fi
