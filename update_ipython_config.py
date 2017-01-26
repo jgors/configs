@@ -20,7 +20,7 @@ old_config = open(ipy_config_old, 'r')
 new_config = open(ipy_config, 'w')
 
 vim_mode = "c.TerminalInteractiveShell.editing_mode = 'vi'"
-vim_mode += "   # need for vi keybindings in ipython v5.x"
+vim_mode += "   # need for vi keybindings in ipython v5.x\n"
 
 ln_found = False
 for ln in old_config:
