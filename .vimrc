@@ -40,7 +40,7 @@ set nostartofline                   " stop certain movements from going to 1st c
 set title                           " display window title
 set number                          " display line numbers
 "set relativenumber                  " set line numbers relative to where currently at
-set noerrorbells                    " no beeps or flashes
+set belloff=all                     " no beeps or flashes
 set ruler                           " display cursor position
 set showmode                        " show current mode
 set showcmd                         " show (partial) cmd & visual selection
