@@ -90,7 +90,6 @@ fi
 ln -s -v $configs/.jupyter/custom/custom.js $jupyter_custom
 ln -s -v $configs/.jupyter/custom/custom.css $jupyter_custom
 
-
 redshift_conf=~/.config/redshift.conf
 echo "\n--> Replacing" $redshift_conf "file with link from" $configs
 rm $redshift_conf
