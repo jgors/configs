@@ -26,29 +26,21 @@ fi
 
 vimrc=~/.vimrc
 echo "\n--> Replacing" $vimrc "file with link from" $configs
-rm $vimrc
-#mv ~/{.vimrc,.vimrc_old}
-ln -s -v ~/.configs/.vimrc $vimrc
+ln -sfv ~/.configs/.vimrc $vimrc
 
 vim_dir=~/.vim
 echo "\n--> Replacing" $vim_dir "dir with link from" $configs
 # create the undo dir if it doesn't already exist (but it shouldn't)
 [ ! -d ~/.configs/.vim/undodir ] && mkdir ~/.configs/.vim/undodir
-rm -rf $vim_dir
-#mv ~/{.vim,.vim_old}
-ln -s -v ~/.configs/.vim $vim_dir
+ln -sfv ~/.configs/.vim ~/
 
 tmux_conf=~/.tmux.conf
 echo "\n--> Replacing" $tmux_conf "file with link from" $configs
-rm $tmux_conf
-#mv ~/{.tmux.conf,.tmux_old.conf}
-ln -s -v ~/.configs/.tmux.conf $tmux_conf
+ln -sfv ~/.configs/.tmux.conf $tmux_conf
 
 zsh_dir=~/.zsh
 echo "\n--> Replacing" $zsh_dir "dir with link from" $configs
-rm -rf $zsh_dir
-#mv ~/{.zsh,.zsh_old}
-ln -s -v ~/.configs/.zsh $zsh_dir
+ln -sfv ~/.configs/.zsh ~/
 
 zshrc=~/.zshrc
 echo "\nAdding sourced zsh file to" $zshrc
@@ -63,9 +55,7 @@ fi
 
 inputrc=~/.inputrc
 echo "\n--> Replacing" $inputrc "file with link from" $configs
-rm $inputrc
-#mv ~/{.inputrc,.inputrc_old}
-ln -s -v ~/.configs/.inputrc $inputrc
+ln -sfv ~/.configs/.inputrc $inputrc
 
 echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
@@ -83,15 +73,11 @@ if [ ! -d $jupyter_custom ]; then
     echo "\n--> Making" $jupyter_custom
     mkdir $jupyter_custom
 else
-    echo "--> Updating ~/.jupyter/custom"
-    rm $jupyter_custom/custom.js
-    rm $jupyter_custom/custom.css
+    echo "--> Updating" $jupyter_custom
 fi
-ln -s -v $configs/.jupyter/custom/custom.js $jupyter_custom
-ln -s -v $configs/.jupyter/custom/custom.css $jupyter_custom
+ln -sfv $configs/.jupyter/custom/custom.js $jupyter_custom
+ln -sfv $configs/.jupyter/custom/custom.css $jupyter_custom
 
 redshift_conf=~/.config/redshift.conf
 echo "\n--> Replacing" $redshift_conf "file with link from" $configs
-rm $redshift_conf
-#mv ~/{.tmux.conf,.tmux_old.conf}
-ln -s -v ~/.configs/redshift.conf $redshift_conf
+ln -sfv ~/.configs/redshift.conf $redshift_conf
