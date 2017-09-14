@@ -72,7 +72,7 @@ vim +BundleInstall +qall
 
 echo "\n--> Setting up ipython to use vim keybindings"
 ipython profile create
-cp ~/.configs/ipy5_keybindings.py ~/.ipython/profile_default/startup/
+ln -sfv ~/.configs/ipy_keybindings.py ~/.ipython/profile_default/startup/
 python ~/.configs/update_ipython_config.py
 
 echo "\n--> Setting up jupyter to use vim keybindings in notebook"
