@@ -213,8 +213,8 @@ nmap ) <C-W>>
 "
 " Python
 " Add header file for python files
-"autocmd bufnewfile *.py so $HOME/.configs/.vim/py_header.txt
-autocmd bufnewfile *.py 0r $HOME/.configs/.vim/py_header_new.txt
+autocmd bufnewfile *.py 0r $HOME/.configs/.vim/py_header.txt
+"autocmd bufnewfile *.py 0r $HOME/.configs/.vim/py_header_new.txt
 
 "autocmd bufnewfile *.py exe "1," . 10 . "g/Creation Date:.*/s//Creation Date: " .strftime("%m-%d-%Y")
 autocmd bufnewfile *.py exe "1," . 9 . "g/Creation Date:.*/s//Creation Date: " .strftime("%m-%d-%Y")
@@ -344,9 +344,13 @@ endif
 
 
 "  _______POWERLINE _______
-" (plugin for statusline; on by default)
+" (plugin for statusline)
 "
 "let g:Powerline_symbols = "unicode"
+
+"  _______AIRLINE _______
+" (plugin for statusline)
+let g:airline_theme='powerlineish'
 
 " ---------------------------------------------------------------------------------------
 " Indenting Code
@@ -759,6 +763,47 @@ let g:indent_guides_start_level = 2
 "let g:syntastic_quiet_warnings=1
 "
 "let g:syntastic_check_on_open = 1
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"
+"
+" _______Ale_______
+"let g:airline#extensions#ale#enabled = 1
+"nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+"nmap <silent> ee <Plug>(ale_next_wrap)
+
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+"let g:ale_set_highlights = 1
+"let g:ale_set_signs = 0
+"let g:ale_echo_msg_error_str = 'E'
+"let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+"let g:ale_sign_error = '>'
+"let g:ale_sign_warning = '-'
+"autocmd VimEnter * :hi PyFlakes ctermbg=LightMagenta
+"hi PyFlakes ctermbg=LightMagenta
+":highlight link ALEError gui=NONE guifg=bg guibg=fg
+"highlight link ALEError LightMagenta
+
+" _______yapf_______
+" installed with pip
+"autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+"autocmd FileType python nnoremap <Leader>= :0,$!yapf<CR>
+
+" _______vim-autoformat_______
+"noremap <F3> :Autoformat<CR>
+
+
+
 
 
 "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
