@@ -21,21 +21,29 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
-Bundle 'Lokaltog/vim-powerline'
 "Bundle 'powerline/powerline'
 "Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+" depricated
+"Bundle 'Lokaltog/vim-powerline'
+"Bundle 'powerline/powerline'
 
 Bundle 'fs111/pydoc.vim'
-"Bundle 'klen/python-mode'
+" a bit too much
+"Bundle 'python-mode/python-mode'
+" depricated
 Bundle 'kevinw/pyflakes-vim'
 
+"Bundle 'Chiel92/vim-autoformat'
+"Bundle 'w0rp/ale'
+"Bundle 'scrooloose/syntastic'
 "Bundle 'vim-scripts/Rainbow-Parentheses-Improved'
 "Bundle 'danro/rename.vim'
 "Bundle 'kshenoy/vim-signature'
 "Bundle 'mhinz/vim-signify'
 Bundle 'mhinz/vim-startify'
 Bundle 'ervandew/supertab'
-"Bundle 'scrooloose/syntastic'
 "Bundle 'godlygeek/tabular'
 "Bundle 'blueyed/vim-diminactive'
 "Bundle 'terryma/vim-expand-region'
