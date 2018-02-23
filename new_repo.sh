@@ -6,6 +6,9 @@ sudo apt-get install vim vim-gnome zsh tmux python-pip htop exuberant-ctags font
 pip install pip --user --upgrade
 pip install ipython --user --upgrade
 pip install jupyter --user --upgrade
+pip install pylint --user --upgrade
+pip install autopep8 --user --upgrade
+
 
 configs=~/.configs
 
