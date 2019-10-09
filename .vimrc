@@ -949,3 +949,9 @@ set statusline+=%{gutentags#statusline()}
 let g:gutentags_cache_dir="/tmp"
 " ctrl-] to go to tag def if only one match or list all if many matches are found
 noremap <C-]> g<C-]>
+
+
+"#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+" easymotion
+" navigation to anywhere in the buffer using f like Vimium in Chrome.
+nmap f <Plug>(easymotion-prefix)s
