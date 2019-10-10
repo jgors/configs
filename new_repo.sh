@@ -2,13 +2,13 @@
 
 echo "\n--> INSTALLING SYSTEM PKGS"
 sudo apt-get update
-sudo apt-get install vim vim-gnome zsh tmux python-pip htop exuberant-ctags fonts-inconsolata xclip git
-pip install pip --user --upgrade
-pip install ipython --user --upgrade
-pip install jupyter --user --upgrade
-pip install pylint --user --upgrade
-pip install autopep8 --user --upgrade
+sudo apt-get install vim vim-gnome zsh tmux python-pip python-pip3 htop exuberant-ctags fonts-inconsolata xclip git
 
+echo "\n--> INSTALLING PYTHON PKGS"
+pip3 install ipython --user --upgrade
+pip3 install jupyter --user --upgrade
+pip3 install pylint --user --upgrade
+pip3 install autopep8 --user --upgrade
 
 configs=~/.configs
 
@@ -66,7 +66,7 @@ vim +BundleInstall +qall
 echo "\n--> Setting up ipython to use vim keybindings"
 ipython profile create
 ln -sfv ~/.configs/ipy_keybindings.py ~/.ipython/profile_default/startup/
-python ~/.configs/update_ipython_config.py
+python3 ~/.configs/update_ipython_config.py
 
 echo "\n--> Setting up jupyter to use vim keybindings in notebook"
 echo "--> NOTE:  for this to work, need to make sure this extension is"
