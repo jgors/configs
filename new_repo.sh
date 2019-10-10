@@ -2,7 +2,7 @@
 
 echo "\n--> INSTALLING SYSTEM PKGS"
 sudo apt-get update
-sudo apt-get install vim vim-gnome zsh tmux python-pip python-pip3 htop exuberant-ctags fonts-inconsolata xclip git
+sudo apt-get install vim vim-gnome zsh tmux python-pip python3-pip htop exuberant-ctags fonts-inconsolata xclip git
 
 echo "\n--> INSTALLING PYTHON PKGS"
 pip3 install ipython --user --upgrade
