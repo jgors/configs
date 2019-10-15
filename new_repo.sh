@@ -6,7 +6,6 @@ sudo apt-get install vim vim-gnome zsh tmux python3-pip htop exuberant-ctags fon
 
 echo "\n--> INSTALLING PYTHON PKGS"
 pip3 install ipython --user --upgrade
-pip3 install jupyter --user --upgrade
 pip3 install pylint --user --upgrade
 pip3 install autopep8 --user --upgrade
 
@@ -64,19 +63,7 @@ echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
 
 echo "\n--> Setting up ipython to use vim keybindings"
-ipython profile create
-ln -sfv ~/.configs/ipy_keybindings.py ~/.ipython/profile_default/startup/
-python3 ~/.configs/update_ipython_config.py
+sh ./ipython_setup.sh
 
-echo "\n--> Setting up jupyter to use vim keybindings in notebook"
-echo "--> NOTE:  for this to work, need to make sure this extension is"
-echo "--> installed:  https://github.com/lambdalisue/jupyter-vim-binding"
-jupyter_custom=~/.jupyter/custom
-if [ ! -d $jupyter_custom ]; then
-    echo "\n--> Making" $jupyter_custom
-    mkdir $jupyter_custom
-else
-    echo "--> Updating" $jupyter_custom
-fi
-ln -sfv $configs/.jupyter/custom/custom.js $jupyter_custom
-ln -sfv $configs/.jupyter/custom/custom.css $jupyter_custom
+#echo "\n--> INSTALLING PYTHON PKG jupyter"
+#sh ./jupyter_install.sh
