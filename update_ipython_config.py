@@ -30,3 +30,4 @@ with open(ipy_config_old, 'r') as old_config:
     if not ln_found:    # not sure this is needed
         new_config.write(vim_mode)
 os.remove(ipy_config_old)
+print("Done...vim is now the default keybinding for ipython.")
