@@ -63,7 +63,7 @@ echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
 
 echo "\n--> Setting up ipython to use vim keybindings"
-sh ./ipython_setup.sh
+sh ~/.configs/ipython_setup.sh
 
 #echo "\n--> INSTALLING PYTHON PKG jupyter"
-#sh ./jupyter_install.sh
+#sh ~/.configs/jupyter_install.sh
