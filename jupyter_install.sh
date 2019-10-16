@@ -11,5 +11,5 @@ if [ ! -d $jupyter_custom ]; then
 else
     echo "--> Updating" $jupyter_custom
 fi
-ln -sfv $configs/.jupyter/custom/custom.js $jupyter_custom
-ln -sfv $configs/.jupyter/custom/custom.css $jupyter_custom
+ln -sfv ~/.configs/.jupyter/custom/custom.js $jupyter_custom
+ln -sfv ~/.configs/.jupyter/custom/custom.css $jupyter_custom

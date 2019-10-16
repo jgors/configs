@@ -16,7 +16,7 @@ sudo chsh -s $(which zsh) $(whoami)
 #chsh -s /bin/zsh
 #sudo chsh -s /bin/zsh
 
-vundle_dir=~/.configs/.vim/bundle/vundle
+vundle_dir=$configs/.vim/bundle/vundle
 if [ ! -d $vundle_dir ]; then
     echo "\n--> Installing Vundle in" $vundle_dir
     git clone https://github.com/gmarik/vundle.git $vundle_dir
@@ -28,21 +28,21 @@ fi
 
 vimrc=~/.vimrc
 echo "\n--> Replacing" $vimrc "file with link from" $configs
-ln -sfv ~/.configs/.vimrc $vimrc
+ln -sfv $configs/.vimrc $vimrc
 
 vim_dir=~/.vim
 echo "\n--> Replacing" $vim_dir "dir with link from" $configs
 # create the undo dir if it doesn't already exist (but it shouldn't)
-[ ! -d ~/.configs/.vim/undodir ] && mkdir ~/.configs/.vim/undodir
-ln -sfv ~/.configs/.vim ~/
+[ ! -d $configs/.vim/undodir ] && mkdir $configs/.vim/undodir
+ln -sfv $configs/.vim ~/
 
 tmux_conf=~/.tmux.conf
 echo "\n--> Replacing" $tmux_conf "file with link from" $configs
-ln -sfv ~/.configs/.tmux.conf $tmux_conf
+ln -sfv $configs/.tmux.conf $tmux_conf
 
 zsh_dir=~/.zsh
 echo "\n--> Replacing" $zsh_dir "dir with link from" $configs
-ln -sfv ~/.configs/.zsh ~/
+ln -sfv $configs/.zsh ~/
 
 zshrc=~/.zshrc
 echo "\nAdding sourced zsh file to" $zshrc
@@ -57,13 +57,13 @@ fi
 
 inputrc=~/.inputrc
 echo "\n--> Replacing" $inputrc "file with link from" $configs
-ln -sfv ~/.configs/.inputrc $inputrc
+ln -sfv $configs/.inputrc $inputrc
 
 echo "\n--> Updating all Vundle Bundles"
 vim +BundleInstall +qall
 
 echo "\n--> Setting up ipython to use vim keybindings"
-sh ~/.configs/ipython_setup.sh
+sh $configs/ipython_setup.sh
 
 #echo "\n--> INSTALLING PYTHON PKG jupyter"
-#sh ~/.configs/jupyter_install.sh
+#sh $configs/jupyter_install.sh
