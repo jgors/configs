@@ -36,7 +36,7 @@ Bundle 'fs111/pydoc.vim'
 " a bit too much
 "Bundle 'python-mode/python-mode'
 " depricated
-Bundle 'kevinw/pyflakes-vim'
+" Bundle 'kevinw/pyflakes-vim'
 
 "Bundle 'Chiel92/vim-autoformat'
 "Bundle 'w0rp/ale'
