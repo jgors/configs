@@ -1,20 +1,19 @@
 #! /bin/bash
 
 echo "\n--> INSTALLING SYSTEM PKGS"
-sudo apt-get update
-sudo apt-get install vim vim-gnome zsh tmux python3-pip htop exuberant-ctags fonts-inconsolata xclip git
+sudo apt update && sudo apt upgrade -y
+sudo apt-get install vim vim-gtk3 zsh tmux python3-pip htop exuberant-ctags fonts-inconsolata xclip git
 
 echo "\n--> INSTALLING PYTHON PKGS"
-pip3 install ipython --user --upgrade
-pip3 install pylint --user --upgrade
-pip3 install autopep8 --user --upgrade
+pip install ipython --user --upgrade
+pip install pylint --user --upgrade
+pip install autopep8 --user --upgrade
 
 configs=~/.configs
 
 echo "\n--> Changing default shell to zsh"
 sudo chsh -s $(which zsh) $(whoami)
-#chsh -s /bin/zsh
-#sudo chsh -s /bin/zsh
+#sudo chsh -s $(which zsh)
 
 vundle_dir=$configs/.vim/bundle/vundle
 if [ ! -d $vundle_dir ]; then
