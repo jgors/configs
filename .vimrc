@@ -367,8 +367,7 @@ vmap <leader>h <gv
 vmap <leader>l >gv
 
 " Make html & css files only have two spaces for indents
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Alternatively, could add the desired indent settings to the following file:
 " ~/.vim/after/ftplugin/html.vim
